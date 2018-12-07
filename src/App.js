@@ -10,7 +10,6 @@ class App extends Component {
     this.state = {
       data: templateData
     }
-
   }
 
   renderData = (data) => {
@@ -42,17 +41,16 @@ class App extends Component {
         suppressContentEditableWarning
         ref={key}
         className={styles.title}
-        onKeyDown={(e) => this.onKeyDownTitle(e, title)}
-      >
+        onKeyDown={(e) => this.onKeyDownTitle(e, title)}>
         <h3>{title}</h3>
       </div>
     )
   }
 
-  trashClick = (title, note) => {
-    const noteData = this.getNoteData(title, note)
+  trashClick = (title, noteIndex) => {
+    const titleData = this.getTitleData(title)
     let data = this.state.data
-    data[noteData['titleIndex']][title].splice(noteData['noteIndex'], 1)
+    data[titleData['titleIndex']][title].splice(noteIndex, 1)
     this.setState({ data })
   }
 
@@ -65,7 +63,6 @@ class App extends Component {
       }
       return false
     })
-
     return { titleIndex }
   }
 
@@ -95,17 +92,11 @@ class App extends Component {
     })
 
     return { titleIndex, noteIndex }
-
   }
-
-  onInput = (e, title, note) => {
-    let text = e.target.textContent
-  }
-
 
   renderNotes = (notes, title) => {
-    const listNotes = notes.map((note, index) => {
-      const key = `${title}-${index}`.replace(/ /g, '')
+    const listNotes = notes.map((note, noteIndex) => {
+      const key = `${title}-${noteIndex}`.replace(/ /g, '')
       this.refList.push(key)
       return (
         <div
@@ -117,14 +108,13 @@ class App extends Component {
           <Icon
             name='trash'
             style={this.state.key === key ? { visibility: 'visible' } : { visibility: 'hidden' }}
-            onClick={() => this.trashClick(title, note)}
+            onClick={() => this.trashClick(title, noteIndex)}
           />
           <div contentEditable={true}
             suppressContentEditableWarning
-            onInput={this.onInput}
-            placeholder="Write a comment..."
-            onKeyDown={(e) => this.onKeyDownNote(e, title, note)}
+            onKeyDown={(e) => this.onKeyDownNote(e, title, noteIndex)}
             className={styles.noteWriting}
+            onBlur={(e) => this.onBlur(e, title, noteIndex)}
             ref={key}
           >
             {note}
@@ -133,6 +123,19 @@ class App extends Component {
       )
     })
     return listNotes
+  }
+
+
+
+  onBlur = (e, title, noteIndex) => {
+
+
+    let text = e.target.textContent
+    const titleData = this.getTitleData(title)
+    let data = this.state.data
+    data[titleData['titleIndex']][title][noteIndex] = text
+    this.setState({ data })
+
   }
 
 
@@ -147,7 +150,6 @@ class App extends Component {
       let data = this.state.data
       data[titleData['titleIndex']][title].splice(0, 0, "")
       this.setState({ data })
-
       setTimeout(() => {
         this.refs[this.refList[refIndex + 1]].focus()
       }, 0)
@@ -157,7 +159,7 @@ class App extends Component {
         this.refs[this.refList[refIndex + 1]].focus()
       }
     }
-    
+
     if (e.key === 'ArrowUp') {
       if (refIndex !== 0) {
         this.refs[this.refList[refIndex - 1]].focus()
@@ -166,16 +168,17 @@ class App extends Component {
 
   }
 
-  onKeyDownNote = (e, title, note) => {
-    const noteData = this.getNoteData(title, note)
-    let key = `${title}-${noteData['noteIndex']}`.replace(/ /g, '')
+  onKeyDownNote = (e, title, noteIndex) => {
+
+    const titleData = this.getTitleData(title)
+    let key = `${title}-${noteIndex}`.replace(/ /g, '')
     let refIndex = this.refList.indexOf(key)
+    let data = this.state.data
+    let text = e.target.textContent
     if (e.key === 'Enter') {
 
       e.preventDefault()
-
-      let data = this.state.data
-      data[noteData['titleIndex']][title].splice(noteData['noteIndex'] + 1, 0, "")
+      data[titleData['titleIndex']][title].splice(noteIndex + 1, 0, "")
       this.setState({ data })
 
       setTimeout(() => {
@@ -189,6 +192,7 @@ class App extends Component {
       }
     }
     if (e.key === 'ArrowUp') {
+
       this.refs[this.refList[refIndex - 1]].focus()
     }
   }
