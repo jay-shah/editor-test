@@ -36,18 +36,38 @@ class App extends Component {
     const key = `${title}`.replace(/ /g, '')
     this.refList.push(key)
     return (
-      <div key={key}
-        contentEditable={true}
-        suppressContentEditableWarning
-        ref={key}
+
+      <div
+        key={key}
         className={styles.title}
-        onKeyDown={(e) => this.onKeyDownTitle(e, title)}>
-        <h3>{title}</h3>
+        onMouseEnter={() => this.onMouseEnterTitle(key)}
+        onMouseLeave={this.onMouseLeaveTitle}>
+
+        <div key={key}
+          contentEditable={true}
+          suppressContentEditableWarning
+          ref={key}
+          className={styles.titleWriting}
+          onKeyDown={(e) => this.onKeyDownTitle(e, title)}>
+          <h3>{title}</h3>
+        </div>
+        <Icon
+          name='trash'
+          style={this.state.key === key ? { visibility: 'visible' } : { visibility: 'hidden' }}
+          onClick={() => this.trashClickTitle(title)}
+        />
       </div>
     )
   }
 
-  trashClick = (title, noteIndex) => {
+  trashClickTitle = (title) => {
+    const titleData = this.getTitleData(title)
+    let data = this.state.data
+    data.splice(titleData['titleIndex'], 1)
+    this.setState({ data })
+  }
+
+  trashClickNote = (title, noteIndex) => {
     const titleData = this.getTitleData(title)
     let data = this.state.data
     data[titleData['titleIndex']][title].splice(noteIndex, 1)
@@ -102,13 +122,13 @@ class App extends Component {
         <div
           key={key}
           className={styles.note}
-          onMouseEnter={() => this.onMouseEnter(key)}
-          onMouseLeave={this.onMouseLeave}
+          onMouseEnter={() => this.onMouseEnterNote(key)}
+          onMouseLeave={this.onMouseLeaveNote}
         >
           <Icon
             name='trash'
             style={this.state.key === key ? { visibility: 'visible' } : { visibility: 'hidden' }}
-            onClick={() => this.trashClick(title, noteIndex)}
+            onClick={() => this.trashClickNote(title, noteIndex)}
           />
           <div contentEditable={true}
             suppressContentEditableWarning
@@ -197,13 +217,24 @@ class App extends Component {
     }
   }
 
-  onMouseEnter = (key) => {
+  onMouseEnterNote = (key) => {
     this.setState({
       key
     })
   }
 
-  onMouseLeave = () => {
+  onMouseLeaveNote = () => {
+    this.setState({
+      key: null
+    })
+  }
+  onMouseEnterTitle = (key) => {
+    this.setState({
+      key
+    })
+  }
+
+  onMouseLeaveTitle = () => {
     this.setState({
       key: null
     })
