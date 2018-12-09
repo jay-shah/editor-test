@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './App.module.css';
-import { Icon } from 'semantic-ui-react'
+import { Icon, Button } from 'semantic-ui-react'
 import templateData from './data/template.json'
 
 class App extends Component {
@@ -11,6 +11,7 @@ class App extends Component {
       data: templateData
     }
   }
+
 
   renderData = (data) => {
     const sectionData = data.map((section) => {
@@ -36,13 +37,11 @@ class App extends Component {
     const key = `${title}`.replace(/ /g, '')
     this.refList.push(key)
     return (
-
       <div
         key={key}
         className={styles.title}
         onMouseEnter={() => this.onMouseEnterTitle(key)}
         onMouseLeave={this.onMouseLeaveTitle}>
-
         <div key={key}
           contentEditable={true}
           suppressContentEditableWarning
@@ -59,6 +58,121 @@ class App extends Component {
       </div>
     )
   }
+
+  renderNotes = (notes, title) => {
+    const listNotes = notes.map((note, noteIndex) => {
+      const key = `${title}-${noteIndex}`.replace(/ /g, '')
+      this.refList.push(key)
+
+      let parsedNote = this.getNote(note)
+      return (
+        <div
+          key={key}
+          className={styles.note}
+          onMouseEnter={() => this.onMouseEnterNote(key)}
+          onMouseLeave={this.onMouseLeaveNote}
+        >
+          <Icon
+            name='trash'
+            style={this.state.key === key ? { visibility: 'visible' } : { visibility: 'hidden' }}
+            onClick={() => this.trashClickNote(title, noteIndex)}
+          />
+          <div contentEditable={true}
+            suppressContentEditableWarning
+            onKeyDown={(e) => this.onKeyDownNote(e, title, noteIndex)}
+            className={styles.noteWriting}
+            onBlur={(e) => this.onBlur(e, title, noteIndex)}
+            ref={key}
+          >
+            {parsedNote}
+          </div>
+        </div >
+      )
+    })
+    return listNotes
+  }
+
+
+
+  getNote = (note) => {
+
+    let templateOptions = this.findAllOptions(note)
+
+    if (!templateOptions) {
+      return (note)
+    }
+
+    else {
+
+      let notesWithTemplateOptions = []
+      notesWithTemplateOptions = this.getNotesWithTemplateOptions(note, templateOptions, notesWithTemplateOptions)
+      return (<div>
+        {notesWithTemplateOptions}
+      </div>
+      )
+    }
+
+  }
+
+  findAllOptions = (note) => {
+    const templateOptions = /\[.*?\/.*?\]/g
+    const options = note.match(templateOptions)
+    return options
+  }
+
+  getNotesWithTemplateOptions = (note, templateOptions, notesWithTemplateOptions) => {
+
+    let option = templateOptions[0]
+
+    const prefix = this.getPrefix(note, option)
+    const infixList = this.getInfix(option)
+    const suffix = this.getSuffix(note, option)
+    const rendersButtons = this.rendersButtons(infixList)
+
+    notesWithTemplateOptions.push(prefix)
+    notesWithTemplateOptions = notesWithTemplateOptions.concat(rendersButtons)
+
+    if (templateOptions.length !== 1) {
+      const suffix = this.getSuffix(note, option)
+      return this.getNotesWithTemplateOptions(suffix, templateOptions.splice(1), notesWithTemplateOptions)
+    }
+    notesWithTemplateOptions.push(suffix)
+    return notesWithTemplateOptions
+  }
+
+  rendersButtons = (infixList) => {
+    return infixList.map((infix, index) => {
+      const key = `${infix}-${index}`
+      return (
+        <Button key={key}>
+          {infix}
+        </Button>
+      );
+    })
+  }
+
+  getPrefix = (note, option) => {
+    const regex_get_prefix = new RegExp("^.*(?=(\\" + option + "))");
+    const prefix = note.match(regex_get_prefix)[0]
+    return prefix
+  }
+
+  getInfix = (option) => {
+    /** return list of all options inside[.../.../...]remove '[', ']' and '/' */
+    const infix = option.split('/').map((item) => { return item.replace(/\[|\]/g, '') })
+    return infix
+  }
+
+  getSuffix = (note, option) => {
+    const regex_get_suffix = new RegExp("\\" + option + "(.*)")
+    const suffix = note.match(regex_get_suffix)[0].replace(option, '')
+    return suffix
+  }
+
+
+
+
+
 
   trashClickTitle = (title) => {
     const titleData = this.getTitleData(title)
@@ -114,41 +228,11 @@ class App extends Component {
     return { titleIndex, noteIndex }
   }
 
-  renderNotes = (notes, title) => {
-    const listNotes = notes.map((note, noteIndex) => {
-      const key = `${title}-${noteIndex}`.replace(/ /g, '')
-      this.refList.push(key)
-      return (
-        <div
-          key={key}
-          className={styles.note}
-          onMouseEnter={() => this.onMouseEnterNote(key)}
-          onMouseLeave={this.onMouseLeaveNote}
-        >
-          <Icon
-            name='trash'
-            style={this.state.key === key ? { visibility: 'visible' } : { visibility: 'hidden' }}
-            onClick={() => this.trashClickNote(title, noteIndex)}
-          />
-          <div contentEditable={true}
-            suppressContentEditableWarning
-            onKeyDown={(e) => this.onKeyDownNote(e, title, noteIndex)}
-            className={styles.noteWriting}
-            onBlur={(e) => this.onBlur(e, title, noteIndex)}
-            ref={key}
-          >
-            {note}
-          </div>
-        </div >
-      )
-    })
-    return listNotes
-  }
+
 
 
 
   onBlur = (e, title, noteIndex) => {
-
 
     let text = e.target.textContent
     const titleData = this.getTitleData(title)
@@ -189,12 +273,13 @@ class App extends Component {
   }
 
   onKeyDownNote = (e, title, noteIndex) => {
+    console.log(this.state.data)
 
     const titleData = this.getTitleData(title)
     let key = `${title}-${noteIndex}`.replace(/ /g, '')
     let refIndex = this.refList.indexOf(key)
     let data = this.state.data
-    let text = e.target.textContent
+
     if (e.key === 'Enter') {
 
       e.preventDefault()
