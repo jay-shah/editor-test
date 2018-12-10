@@ -64,7 +64,7 @@ class App extends Component {
       const key = `${title}-${noteIndex}`.replace(/ /g, '')
       this.refList.push(key)
 
-      let parsedNote = this.getNote(note)
+      let parsedNote = this.getNote(note, title, noteIndex)
       return (
         <div
           key={key}
@@ -94,7 +94,7 @@ class App extends Component {
 
 
 
-  getNote = (note) => {
+  getNote = (note, title, noteIndex) => {
 
     let templateOptions = this.findAllOptions(note)
 
@@ -105,7 +105,7 @@ class App extends Component {
     else {
 
       let notesWithTemplateOptions = []
-      notesWithTemplateOptions = this.getNotesWithTemplateOptions(note, templateOptions, notesWithTemplateOptions)
+      notesWithTemplateOptions = this.getNotesWithTemplateOptions(note, templateOptions, notesWithTemplateOptions, title, noteIndex)
       return (
         <div>
 
@@ -122,46 +122,48 @@ class App extends Component {
     return options
   }
 
-  getNotesWithTemplateOptions = (note, templateOptions, notesWithTemplateOptions) => {
+  getNotesWithTemplateOptions = (note, templateOptions, notesWithTemplateOptions, title, noteIndex) => {
 
     let option = templateOptions[0]
 
     const prefix = this.getPrefix(note, option)
     const infixList = this.getInfix(option, prefix, suffix)
     const suffix = this.getSuffix(note, option)
-    const rendersButtons = this.rendersButtons(infixList, prefix, suffix)
+    const rendersButtons = this.rendersButtons(infixList, prefix, suffix, title, noteIndex)
 
     notesWithTemplateOptions.push(prefix)
     notesWithTemplateOptions = notesWithTemplateOptions.concat(rendersButtons)
 
     if (templateOptions.length !== 1) {
       const suffix = this.getSuffix(note, option)
-      return this.getNotesWithTemplateOptions(suffix, templateOptions.splice(1), notesWithTemplateOptions)
+      return this.getNotesWithTemplateOptions(suffix, templateOptions.splice(1), notesWithTemplateOptions, title, noteIndex)
     }
     notesWithTemplateOptions.push(suffix)
     return notesWithTemplateOptions
   }
 
-  rendersButtons = (infixList, prefix, suffix) => {
+  rendersButtons = (infixList, prefix, suffix, title, noteIndex) => {
     return infixList.map((infix, index) => {
       const key = `${infix}-${index}`
       return (
-        <button key={key}
+        <Button key={key}
           prefix={prefix}
           suffix={suffix}
           value={infix}
-          onClick={(e) => this.buttonClick(e, infix, prefix, suffix)}>
+          onClick={(e) => this.buttonClick(e, infix, prefix, suffix, title, noteIndex)}>
           {infix}
-        </button>
+        </Button>
       );
     })
   }
 
-  buttonClick = (e, data, prefix, suffix) => {
-    // TODO: Need to get whole prefix
-    console.log(data)
-    console.log(prefix)
-    console.log(suffix)
+  buttonClick = (e, infix, prefix, suffix, title, noteIndex) => {
+    const titleData = this.getTitleData(title)
+    let data = this.state.data
+    data[titleData['titleIndex']][title][noteIndex] = `${prefix} ${infix} ${suffix}`
+    this.setState({ data })
+
+
   }
 
 
@@ -182,10 +184,6 @@ class App extends Component {
     const suffix = note.match(regex_get_suffix)[0].replace(option, '')
     return suffix
   }
-
-
-
-
 
 
   trashClickTitle = (title) => {
