@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from './App.module.css';
-import { Icon } from 'semantic-ui-react'
 import templateData from './data/template.json'
 import TitleComponent from './components/TitleComponent/TitleComponent'
 import NoteComponent from './components/NoteComponent/NoteComponent'

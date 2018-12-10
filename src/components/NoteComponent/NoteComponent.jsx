@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styles from './NoteComponent.module.css'
-import { Icon } from 'semantic-ui-react'
 import Note from './Note/Note'
 
 const NoteComponent = ({
