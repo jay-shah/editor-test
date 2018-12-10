@@ -27,6 +27,16 @@
     /* Pretty Modern Browsers */
 }
 
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
+-webkit-appearance: none;
+border-radius: 0;
+}
+
 body {
   background-color: var(--base-one) !important;
 }
@@ -44,6 +54,9 @@ body {
   letter-spacing: -0.125px;
   transition-timing-function: ease-out;
   transition: 0.25s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
 }
 
 .noteButton:first-child {
@@ -79,17 +92,14 @@ body {
 
 .section {
   text-align: left;
-  border-bottom: 1px solid var(--hammersmith);
   padding-top: 16px;
-  padding-bottom: 16px;
+  border-bottom: 1px solid var(--hammersmith);
 }
 
-.title {
-  font-size: 14px;
-  color: var(--moorgate);
-  letter-spacing: -0.125px;
+.section:first-child {
   text-align: left;
-  border-bottom: 1px solid var(--enamel);
+  padding-top: 16px;
+  border-bottom: 0px;
 }
 
 .titleWriting {
@@ -177,11 +187,12 @@ body {
   padding-right: 22px;
   transition-timing-function: ease-in;
   transition: 0.25s;
+  cursor: pointer;
 }
 
 .signupButton:hover {
   background: var(--galloway);
-  box-shadow: 0 2px 9px 0 rgba(0, 122, 135, 0.60);
+  box-shadow: 0 4px 9px 0 rgba(0, 122, 135, 0.60);
   font-family: Gordita-Medium;
   font-size: 14px;
   transition-timing-function: ease-out;
@@ -199,6 +210,8 @@ body {
   margin-top: 40px;
   margin-left: 40px;
   margin-right: 80px;
+  position: fixed;
+  right: 0;
 }
 
 .cardImage {
