@@ -30,6 +30,5 @@ const NoteComponent = ({ noteKey, note, title, noteIndex, onMouseEnterNote, onMo
         </div >
     )
 }
-}
 
 export default NoteComponent
