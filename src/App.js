@@ -350,13 +350,19 @@ class App extends Component {
     this.refList = []
     const Sections = this.renderData(this.state.data)
     return (
-      <div >
-        <div className={styles.template} id='thisistheid'>
-          {Sections}
-        </div >
-
-
-        <button onClick={this.handleCopy}>  COPY </button>
+      <div className={styles.navBar}><div className={styles.kirokuLogo}></div>
+      <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div>
+      <div className={styles.navList}>Contact</div>
+      <div className={styles.navList}>About</div>
+      <div className={styles.template}>
+        {Sections}
+      </div >
+      <div className={styles.cardConatiner}>
+      <div className={styles.cardImage}></div>
+        <div className={styles.cardTitle}>An AI dental assistant.</div>
+        <div className={styles.cardParagraph}> Kiroku lets you spend significantly less time writing clinical notes.</div>
+        <button className={styles.cardButton}>Learn more</button>
+        </div>
       </div>
     );
   }
