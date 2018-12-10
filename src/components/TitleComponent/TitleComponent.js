@@ -1,5 +1,4 @@
 import React from 'react'
-import { Icon } from 'semantic-ui-react'
 import styles from './TitleComponent.module.css'
 import Title from './Title/Title'
 
@@ -24,10 +23,10 @@ const TitleComponent = ({
                 onKeyDownTitle={onKeyDownTitle}
                 title={title}
                 addRef={addRef} />
-            <Icon
+            {/* <Icon
                 className={styles.trashTitle}
                 style={onMouseKey === titleKey ? { visibility: 'visible' } : { visibility: 'hidden' }}
-                onClick={() => trashClickTitle(title)} />
+                onClick={() => trashClickTitle(title)} /> */}
         </div >
     )
 }
