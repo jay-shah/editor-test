@@ -3,7 +3,19 @@ import styles from './NoteComponent.module.css'
 import { Icon } from 'semantic-ui-react'
 import Note from './Note/Note'
 
-const NoteComponent = ({ noteKey, note, title, noteIndex, onMouseEnterNote, onMouseLeaveNote, trashClickNote, onKeyDownNote, onBlurNote, onMouseKey, addRef }) => {
+const NoteComponent = ({
+    noteKey,
+    note,
+    title,
+    noteIndex,
+    onMouseEnterNote,
+    onMouseLeaveNote,
+    trashClickNote,
+    onKeyDownNote,
+    onBlurNote,
+    onMouseKey,
+    addRef
+}) => {
     return (
         <div
             key={noteKey}
@@ -17,7 +29,6 @@ const NoteComponent = ({ noteKey, note, title, noteIndex, onMouseEnterNote, onMo
                 style={onMouseKey === noteKey ? { visibility: 'visible' } : { visibility: 'hidden' }}
                 onClick={() => trashClickNote(title, noteIndex)}
             />
-
             <Note
                 addRef={addRef}
                 note={note}
