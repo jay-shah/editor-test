@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './App.module.css';
-import { Icon, Button } from 'semantic-ui-react'
+import { Icon } from 'semantic-ui-react'
 import templateData from './data/template.json'
 
 class App extends Component {
@@ -64,7 +64,7 @@ class App extends Component {
       const key = `${title}-${noteIndex}`.replace(/ /g, '')
       this.refList.push(key)
 
-      let parsedNote = this.getNote(note)
+      let parsedNote = this.getNote(note, title, noteIndex)
       return (
         <div
           key={key}
@@ -94,7 +94,7 @@ class App extends Component {
 
 
 
-  getNote = (note) => {
+  getNote = (note, title, noteIndex) => {
 
     let templateOptions = this.findAllOptions(note)
 
@@ -105,10 +105,12 @@ class App extends Component {
     else {
 
       let notesWithTemplateOptions = []
-      notesWithTemplateOptions = this.getNotesWithTemplateOptions(note, templateOptions, notesWithTemplateOptions)
-      return (<div>
-        {notesWithTemplateOptions}
-      </div>
+      notesWithTemplateOptions = this.getNotesWithTemplateOptions(note, templateOptions, notesWithTemplateOptions, title, noteIndex)
+      return (
+        <div>
+
+          {notesWithTemplateOptions}
+        </div>
       )
     }
 
@@ -120,36 +122,50 @@ class App extends Component {
     return options
   }
 
-  getNotesWithTemplateOptions = (note, templateOptions, notesWithTemplateOptions) => {
+  getNotesWithTemplateOptions = (note, templateOptions, notesWithTemplateOptions, title, noteIndex) => {
 
     let option = templateOptions[0]
 
     const prefix = this.getPrefix(note, option)
-    const infixList = this.getInfix(option)
     const suffix = this.getSuffix(note, option)
-    const rendersButtons = this.rendersButtons(infixList)
+    const infixList = this.getInfix(option, prefix, suffix)
+    const rendersButtons = this.rendersButtons(infixList, prefix, suffix, title, noteIndex)
 
     notesWithTemplateOptions.push(prefix)
     notesWithTemplateOptions = notesWithTemplateOptions.concat(rendersButtons)
 
     if (templateOptions.length !== 1) {
       const suffix = this.getSuffix(note, option)
-      return this.getNotesWithTemplateOptions(suffix, templateOptions.splice(1), notesWithTemplateOptions)
+      return this.getNotesWithTemplateOptions(suffix, templateOptions.splice(1), notesWithTemplateOptions, title, noteIndex)
     }
     notesWithTemplateOptions.push(suffix)
     return notesWithTemplateOptions
   }
 
-  rendersButtons = (infixList) => {
+  rendersButtons = (infixList, prefix, suffix, title, noteIndex) => {
     return infixList.map((infix, index) => {
       const key = `${infix}-${index}`
       return (
-        <Button key={key}>
+        <button key={key}
+          prefix={prefix}
+          suffix={suffix}
+          value={infix}
+          onClick={(e) => this.buttonClick(e, infix, prefix, suffix, title, noteIndex)}>
           {infix}
-        </Button>
+        </button>
       );
     })
   }
+
+  buttonClick = (e, infix, prefix, suffix, title, noteIndex) => {
+    const titleData = this.getTitleData(title)
+    let data = this.state.data
+    data[titleData['titleIndex']][title][noteIndex] = `${prefix} ${infix} ${suffix}`
+    this.setState({ data })
+
+
+  }
+
 
   getPrefix = (note, option) => {
     const regex_get_prefix = new RegExp("^.*(?=(\\" + option + "))");
@@ -168,10 +184,6 @@ class App extends Component {
     const suffix = note.match(regex_get_suffix)[0].replace(option, '')
     return suffix
   }
-
-
-
-
 
 
   trashClickTitle = (title) => {
@@ -233,12 +245,23 @@ class App extends Component {
 
 
   onBlur = (e, title, noteIndex) => {
+    const containsButtons = e.target.innerHTML.includes('button')
 
-    let text = e.target.textContent
-    const titleData = this.getTitleData(title)
-    let data = this.state.data
-    data[titleData['titleIndex']][title][noteIndex] = text
-    this.setState({ data })
+    if (containsButtons) {
+      return
+    }
+
+    else if (e.target.tagName === 'BUTTON') {
+      return
+    }
+    else {
+
+      let text = e.target.textContent
+      const titleData = this.getTitleData(title)
+      let data = this.state.data
+      data[titleData['titleIndex']][title][noteIndex] = text
+      this.setState({ data })
+    }
 
   }
 
@@ -273,7 +296,6 @@ class App extends Component {
   }
 
   onKeyDownNote = (e, title, noteIndex) => {
-    console.log(this.state.data)
 
     const titleData = this.getTitleData(title)
     let key = `${title}-${noteIndex}`.replace(/ /g, '')
@@ -283,12 +305,13 @@ class App extends Component {
     if (e.key === 'Enter') {
 
       e.preventDefault()
-      data[titleData['titleIndex']][title].splice(noteIndex + 1, 0, "")
+      data[titleData['titleIndex']][title].splice(noteIndex + 1, 0, " ")
       this.setState({ data })
 
       setTimeout(() => {
         this.refs[this.refList[refIndex + 1]].focus()
       }, 0)
+
 
     }
     if (e.key === 'ArrowDown') {
