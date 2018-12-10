@@ -3,7 +3,16 @@ import { Icon } from 'semantic-ui-react'
 import styles from './TitleComponent.module.css'
 import Title from './Title/Title'
 
-const TitleComponent = ({ titleKey, title, onMouseEnterTitle, onMouseLeaveTitle, onKeyDownTitle, trashClickTitle, onMouseKey }) => {
+const TitleComponent = ({
+    titleKey,
+    title,
+    onMouseEnterTitle,
+    onMouseLeaveTitle,
+    onKeyDownTitle,
+    trashClickTitle,
+    onMouseKey,
+    addRef
+}) => {
     return (
         <div
             key={titleKey}
@@ -13,7 +22,8 @@ const TitleComponent = ({ titleKey, title, onMouseEnterTitle, onMouseLeaveTitle,
             <Title
                 titlekey={titleKey}
                 onKeyDownTitle={onKeyDownTitle}
-                title={title} />
+                title={title}
+                addRef={addRef} />
             <Icon
                 className={styles.trashTitle}
                 style={onMouseKey === titleKey ? { visibility: 'visible' } : { visibility: 'hidden' }}

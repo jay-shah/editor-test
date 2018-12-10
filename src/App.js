@@ -12,6 +12,13 @@ class App extends Component {
     this.state = {
       data: templateData
     }
+
+    this.inputRef = {}
+  }
+
+
+  addRef = (e, refKey) => {
+    this.inputRef[refKey] = e
   }
 
   renderData = (data) => {
@@ -39,6 +46,7 @@ class App extends Component {
     this.refList.push(key)
     return (
       <TitleComponent
+        addRef={this.addRef}
         key={key}
         titleKey={key}
         title={title}
@@ -59,6 +67,7 @@ class App extends Component {
       let parsedNote = this.getNote(note, title, noteIndex)
       return (
         <NoteComponent
+          addRef={this.addRef}
           key={key}
           noteKey={key}
           title={title}
@@ -134,9 +143,10 @@ class App extends Component {
           prefix={prefix}
           suffix={suffix}
           value={infix}
-          onMouseDown={(e) => this.buttonClick(e, infix, prefix, suffix, title, noteIndex)}>
+          onMouseDown={(e) => this.buttonClick(e, infix, prefix, suffix, title, noteIndex)}
+        >
           {infix}
-        </button>
+        </ button>
       );
     })
   }
@@ -242,7 +252,7 @@ class App extends Component {
 
 
   onKeyDownTitle = (e, title) => {
-
+    console.log(this.inputRef)
     const titleData = this.getTitleData(title)
     let key = `${title}`.replace(/ /g, '')
     let refIndex = this.refList.indexOf(key)
@@ -253,19 +263,19 @@ class App extends Component {
       data[titleData['titleIndex']][title].splice(0, 0, "")
       this.setState({ data })
       setTimeout(() => {
-        this.refs[this.refList[refIndex + 1]].focus()
+        this.inputRef[this.refList[refIndex + 1]].focus()
       }, 0)
     }
 
     if (e.key === 'ArrowDown') {
       if (this.refList[refIndex + 1]) {
-        this.refs[this.refList[refIndex + 1]].focus()
+        this.inputRef[this.refList[refIndex + 1]].focus()
       }
     }
 
     if (e.key === 'ArrowUp') {
       if (refIndex !== 0) {
-        this.refs[this.refList[refIndex - 1]].focus()
+        this.inputRef[this.refList[refIndex - 1]].focus()
       }
     }
 
@@ -273,11 +283,11 @@ class App extends Component {
 
   onKeyDownNote = (e, title, noteIndex) => {
 
+
     const titleData = this.getTitleData(title)
     let key = `${title}-${noteIndex}`.replace(/ /g, '')
     let refIndex = this.refList.indexOf(key)
     let data = this.state.data
-
     if (e.key === 'Enter') {
 
       e.preventDefault()
@@ -285,18 +295,18 @@ class App extends Component {
       this.setState({ data })
 
       setTimeout(() => {
-        this.refs[this.refList[refIndex + 1]].focus()
+        this.inputRef[this.refList[refIndex + 1]].focus()
       }, 0)
 
     }
     if (e.key === 'ArrowDown') {
       if (this.refList[refIndex + 1]) {
-        this.refs[this.refList[refIndex + 1]].focus()
+        this.inputRef[this.refList[refIndex + 1]].focus()
       }
     }
     if (e.key === 'ArrowUp') {
 
-      this.refs[this.refList[refIndex - 1]].focus()
+      this.inputRef[this.refList[refIndex - 1]].focus()
     }
   }
 
@@ -337,20 +347,20 @@ class App extends Component {
     const Sections = this.renderData(this.state.data)
     return (
       <div>
-      <div className={styles.navBar}><div className={styles.kirokuLogo}></div>
-      <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div>
-      <div className={styles.navList}>Contact</div>
-      <div className={styles.navList}>About</div>
-      </div>
-      <div className={styles.template}>
-        {Sections}
-      </div >
-      <div className={styles.cardConatiner}>
-      <div className={styles.cardImage}></div>
-        <div className={styles.cardTitle}>An AI dental assistant.</div>
-        <div className={styles.cardParagraph}> Kiroku lets you spend significantly less time writing clinical notes.</div>
-        <div><button className={styles.cardButton}>Learn more</button></div>
-      </div>
+        <div className={styles.navBar}><div className={styles.kirokuLogo}></div>
+          <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div>
+          <div className={styles.navList}>Contact</div>
+          <div className={styles.navList}>About</div>
+        </div>
+        <div className={styles.template}>
+          {Sections}
+        </div >
+        <div className={styles.cardConatiner}>
+          <div className={styles.cardImage}></div>
+          <div className={styles.cardTitle}>An AI dental assistant.</div>
+          <div className={styles.cardParagraph}> Kiroku lets you spend significantly less time writing clinical notes.</div>
+          <div><button className={styles.cardButton}>Learn more</button></div>
+        </div>
       </div>
     );
   }
