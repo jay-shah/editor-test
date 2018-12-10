@@ -71,6 +71,7 @@ class App extends Component {
           className={styles.note}
           onMouseEnter={() => this.onMouseEnterNote(key)}
           onMouseLeave={this.onMouseLeaveNote}
+
         >
           <Icon
             name='trash'
@@ -93,7 +94,6 @@ class App extends Component {
   }
 
 
-
   getNote = (note, title, noteIndex) => {
 
     let templateOptions = this.findAllOptions(note)
@@ -107,10 +107,9 @@ class App extends Component {
       let notesWithTemplateOptions = []
       notesWithTemplateOptions = this.getNotesWithTemplateOptions(note, templateOptions, notesWithTemplateOptions, title, noteIndex)
       return (
-        <div>
-
+        <span>
           {notesWithTemplateOptions}
-        </div>
+        </span>
       )
     }
 
@@ -348,18 +347,34 @@ class App extends Component {
     })
   }
 
+  handleCopy = () => {
+
+    let range = document.createRange();
+    window.getSelection().removeAllRanges()
+    range.selectNode(document.getElementById('thisistheid'));
+    window.getSelection().addRange(range);
+    document.execCommand("removeFormat");
+    document.execCommand("copy");
+
+  }
+
+
+
 
   render() {
     this.refList = []
     const Sections = this.renderData(this.state.data)
     return (
-      <div className={styles.template}>
-        {Sections}
-      </div >
+      <div >
+        <div className={styles.template} id='thisistheid'>
+          {Sections}
+        </div >
+
+
+        <button onClick={this.handleCopy}>  COPY </button>
+      </div>
     );
   }
 }
 
 export default App;
-
-
