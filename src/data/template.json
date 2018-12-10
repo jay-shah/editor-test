@@ -1,18 +1,8 @@
 [{
-        "Presenting Complaint": [
-            "Checked, See Section",
-            "hi there [Fit and well / No changes / Relevant MH:] this is a suffix test [hi/hi]",
-            "[Conditions / No conditions:]",
-            "[No medication / Medication:]"
-        ]
+        "Presenting Complaint": []
     },
     {
-        "History of Presenting Complaint": [
-            "Checked, See Section",
-            "[Fit and well / No changes / Relevant MH:]",
-            "[Conditions / No conditions:]",
-            "[No medication / Medication:]"
-        ]
+        "History of Presenting Complaint": []
     },
     {
         "Medical History": [
@@ -21,5 +11,89 @@
             "[Conditions / No conditions:]",
             "[No medication / Medication:]"
         ]
+    },
+    {
+        "Dental History (inc OH Routine)": [
+            "[Regular / Irregular] attender ",
+            "Brushes with [electric/manual] toothbrush [once/twice/three times] daily",
+            "Using [fluoride 1450 ppm/fluoride free] toothpaste",
+            "Flossing: [Nil / Occasionally / Daily]",
+            "Interdental brushes: [Nil / Occasionally / daily]",
+            "Mouthwash: [ Listerine/ Plax/ Corsodyl/ Fluoride/ Chlorhexidine] [ once/ twice] a day",
+            "Last Visit: [3 months / 6 months / 9 months / 12 months / 18 months / Over 2 years / Over 5 years / Never / ]"
+        ]
+    },
+    {
+        "Social History": [
+            "Smoking: [ Never / Ex Smoker / Daily smoker: / Occasional smoker / Using Vape]",
+            "Alcohol intake: [ Nil / Units per week:]",
+            "Occupation:",
+            "[Anxious / Not anxious]",
+            "Daily intake of sugary snacks / drinks in between meals: [ Yes / No]"
+        ]
+    },
+    {
+        "Extra Oral Exam": [
+            "Asymmetry: Nil",
+            "TMJ: [ Nil / Clicking / Pain / Deviations / Restricted]",
+            "Muscles of Mastication: [ Nil / Hypertrophic / Tender]",
+            "Lymph nodes: [ Nil / Raised firm node:]",
+            "Salivary Glands: [Nil / Tender]",
+            "Other:"
+        ]
+    },
+    {
+        "Intra Oral Exam": [
+            "Floor of Mouth: [Nil /            ]",
+            "Soft Palate: [Nil /            ]",
+            "Hard Palate: [Nil /            ]",
+            "Tongue: [Nil /            ]",
+            "Buccal Mucosa: [Nil /            ]",
+            "Gingivae: [Healthy / Inflammed]",
+            "OH: [ Inadequate / Fair / Good]",
+            "Teeth as charted ",
+            "[Bleeding on probing / No bleeding on probing]",
+            "[No plaque build up / Plaque build up]",
+            "[No calculus / Calculus build up anteriors / Calculus build up generalised]",
+            "[No tooth surface loss / Tooth surface loss present]",
+            "[No clinical caries seen / Caries present on:]",
+            "[No defective restorations / Defective restorations:]"
+        ]
+    },
+    {
+        "BPE": [
+            "See separate BPE charting"
+        ]
+    },
+    {
+        "Radiographs": [
+            "Bite wing radiographs recorded to asses for Inter-proximal caries, bone loss and other pathology ",
+            "Grade: [ 1 / 2 / 3 ]",
+            "Horizontal Bone Loss: [Nil /            ]",
+            "Caries detected: [Nil /            ]",
+            "Pathology Noted: [Nil /            ]",
+            "Other Findings from BWs: [Nil /            ]"
+        ]
+    },
+    {
+        "Diagnosis": []
+    },
+    {
+        "Treatment Options": []
+    },
+    {
+        "Treatment Plan": [
+            "Oral Hygiene instructions given to brush brush twice daily with fluoride toothpaste, Interdental cleaning with floss / tepe and restrict sugars and acids in between meals"
+        ]
+    },
+    {
+        "Next Visit": [
+            "Caries Risk: [ Low / Med / High]",
+            "Periodontal Risk: [ Low / Med / High]",
+            "Oral Cancer Risk: [ Low / Med / High]",
+            "Tooth Wear Risk: [ Low / Med / High]",
+            "NICE Recall interval agreed: [ 3 / 6 / 9 / 12 / 18 / 24] months"
+        ]
     }
+
 ]
