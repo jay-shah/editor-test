@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './App.module.css';
 import { Icon } from 'semantic-ui-react'
 import templateData from './data/template.json'
+import TitleComponent from './components/TitleComponent/TitleComponent'
 
 class App extends Component {
 
@@ -11,7 +12,6 @@ class App extends Component {
       data: templateData
     }
   }
-
 
   renderData = (data) => {
     const sectionData = data.map((section) => {
@@ -37,25 +37,15 @@ class App extends Component {
     const key = `${title}`.replace(/ /g, '')
     this.refList.push(key)
     return (
-      <div
-        key={key}
-        className={styles.title}
-        onMouseEnter={() => this.onMouseEnterTitle(key)}
-        onMouseLeave={this.onMouseLeaveTitle}>
-        <div key={key}
-          contentEditable={true}
-          suppressContentEditableWarning
-          ref={key}
-          className={styles.titleWriting}
-          onKeyDown={(e) => this.onKeyDownTitle(e, title)}>
-          <h3>{title}</h3>
-        </div>
-        <Icon
-          name='trash'
-          style={this.state.key === key ? { visibility: 'visible' } : { visibility: 'hidden' }}
-          onClick={() => this.trashClickTitle(title)}
-        />
-      </div>
+      <TitleComponent
+        titleKey={key}
+        title={title}
+        onMouseEnterTitle={this.onMouseEnterTitle}
+        onMouseLeaveTitle={this.onMouseLeaveTitle}
+        onKeyDownTitle={this.onKeyDownTitle}
+        trashClickTitle={this.trashClickTitle}
+        onMouseKey={this.state.key}
+      />
     )
   }
 
@@ -348,18 +338,13 @@ class App extends Component {
   }
 
   handleCopy = () => {
-
     let range = document.createRange();
     window.getSelection().removeAllRanges()
     range.selectNode(document.getElementById('thisistheid'));
     window.getSelection().addRange(range);
     document.execCommand("removeFormat");
     document.execCommand("copy");
-
   }
-
-
-
 
   render() {
     this.refList = []
