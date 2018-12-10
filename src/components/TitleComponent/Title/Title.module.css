@@ -1,8 +1,13 @@
 .title {
     position: relative;
     left: 5px;
-    min-width: 200px !important;
+    min-width: 90% !important;
     display: inline-block;
-    color: var(--moorgate);
     padding-bottom: 16px;
+    letter-spacing: -0.125px;
+    color: var(--moorgate);
+}
+
+h3 {
+  font-family: Gordita-Regular !important;
 }

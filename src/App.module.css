@@ -31,33 +31,37 @@ body {
   background-color: var(--base-one) !important;
 }
 
-h1,
-h2,
-h3 {
-  font-family: Gordita-Medium !important;
-  font-weight: 100;
-}
-
-
-button {
+.noteButton {
   border: 1px solid var(--hammersmith);
+  border-left: 0;
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 22px;
   padding-right: 22px;
   font-family: Gordita-Regular;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--moorgate);
   letter-spacing: -0.125px;
   transition-timing-function: ease-out;
   transition: 0.25s;
 }
 
-button:hover {
+.noteButton:first-child {
+  border-left: 1px solid var(--hammersmith);
+}
+
+.noteButton:hover {
   background: rgba(210, 221, 225, 0.35);
-  font-family: Gordita-Medium;
+  cursor: pointer;
   transition-timing-function: ease-in;
   transition: 0.25s;
+  border: 1px solid var(--hammersmith);
+  border-left: 0px;
+  font-size: 14px;
+}
+
+.noteButton:first-child:hover {
+  border-left: 1px solid var(--hammersmith);
 }
 
 .template {
@@ -81,7 +85,6 @@ button:hover {
 }
 
 .title {
-  font-family: Gordita;
   font-size: 14px;
   color: var(--moorgate);
   letter-spacing: -0.125px;
@@ -102,7 +105,7 @@ button:hover {
   padding-top: 16px;
   color: var(--moorgate);
   font-family: Gordita-Regular;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: -0.125px;
   /* border: 1px solid black; */
 }

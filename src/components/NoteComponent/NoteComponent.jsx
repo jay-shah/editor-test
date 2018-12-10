@@ -11,8 +11,9 @@ const NoteComponent = ({ noteKey, note, title, noteIndex, onMouseEnterNote, onMo
             onMouseEnter={() => onMouseEnterNote(noteKey)}
             onMouseLeave={onMouseLeaveNote}
         >
-            <Icon
+            <div
                 name='trash'
+                className={styles.trashNote}
                 style={onMouseKey === noteKey ? { visibility: 'visible' } : { visibility: 'hidden' }}
                 onClick={() => trashClickNote(title, noteIndex)}
             />

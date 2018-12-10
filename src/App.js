@@ -129,7 +129,7 @@ class App extends Component {
       const key = `${infix}-${index}`
       return (
         <button
-          className={styles.button}
+          className={styles.noteButton}
           key={key}
           prefix={prefix}
           suffix={suffix}
