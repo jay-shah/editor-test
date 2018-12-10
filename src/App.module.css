@@ -13,13 +13,41 @@
 /* Link these to the pattern library */
 
 @font-face {
-  font-family: 'Gordita';
-  src: url('../fonts/Gordita-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/Gordita-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+  font-family: 'Gordita-Regular';
+  src: url('./fonts/Gordita-Regular.woff') format('woff'); /* Pretty Modern Browsers */
+  font-family: 'Gordita-Bold';
+  src: url('./fonts/Gordita-Bold.otf') format('otf'); /* Pretty Modern Browsers */
+  font-family: 'Gordita-Light';
+  src: url('./fonts/Gordita-Light.otf') format('otf'); /* Pretty Modern Browsers */
+  font-family: 'Gordita-Medium';
+  src: url('./fonts/Gordita-Medium.otf') format('otf') /* Pretty Modern Browsers */
 }
 
 body {
   background-color: var(--base-one) !important;
+}
+
+h1, h2, h3 {
+  font-family: Gordita-Medium !important;
+  font-weight: 100;
+}
+
+button {
+ border: 1px solid var(--hammersmith);
+ padding-top: 16px;
+ padding-bottom: 16px;
+ padding-left: 22px;
+ padding-right: 22px;
+ font-family: Gordita-Regular;
+ font-size: 12px;
+ color: var(--moorgate);
+ letter-spacing: -0.125px;
+}
+
+button:hover {
+  background: rgba(210,221,225,0.35);
+  font-family: Gordita-Medium;
+  font-size: 11px;
 }
 
 .template {
@@ -29,7 +57,7 @@ body {
   width: 860px;
   text-align: center;
   min-height: 400px;
-  margin-top: 100px;
+  margin-top: 40px;
   margin-left: 80px;
   background-color: white;
 }
@@ -37,8 +65,8 @@ body {
 .section {
   text-align: left;
   border-bottom: 1px solid var(--hammersmith);
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .title {
@@ -60,6 +88,9 @@ body {
 .note {
   padding-bottom: 16px;
   color: var(--moorgate);
+  font-family: Gordita-Regular;
+  font-size: 12px;
+  letter-spacing: -0.125px;
   /* border: 1px solid black; */
 }
 
@@ -71,8 +102,74 @@ body {
 .noteWriting {
   /* display: inline; */
   position: relative;
-  left: 4px;
+  left: 8px;
   min-width: 200px !important;
   display: inline-block;
   /* border: 1px solid black; */
+}
+
+.navBar {
+  background: #FFFFFF;
+  height: 80px;
+  padding-left: 24px;
+  padding-right: 48px;
+  padding-top: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--hammersmith)
+}
+.kirokuLogo {
+  background-image: url('./images/logo.svg');
+  height: 34px;
+  width: 105px;
+  display: inline-block;
+}
+
+.navList {
+  display: inline-block;
+  float: right;
+  padding-right: 24px;
+  line-height: 35px;
+  font-family: Gordita-Medium;
+  font-size: 14px;
+  color: #484848;
+  letter-spacing: -0.08px;
+  text-align: center;
+}
+
+.signUp {
+  display: inline-block;
+  float: right;
+}
+
+.signupButton {
+  background: var(--galloway);
+  border-radius: 4px;
+  font-family: Gordita-Medium;
+  box-shadow: 0 2px 9px 0 rgba(0,122,135,0.30);
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  height: 36px;
+  border: 0px;
+  border-radius: 4px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.signupButton:hover {
+  background: var(--galloway);
+  box-shadow: 0 2px 9px 0 rgba(0,122,135,0.30);
+  font-family: Gordita-Medium;
+  font-size: 14px;
+}
+
+.cardConatiner {
+  background: #FFFFFF;
+  border: 1px solid var(--hammersmith);
+  border-radius: 4px;
+  padding-left: 64px;
+  padding-right: 64px;
 }

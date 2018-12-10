@@ -350,10 +350,14 @@ class App extends Component {
     this.refList = []
     const Sections = this.renderData(this.state.data)
     return (
-      <div className={styles.testnav}>Test
+      <div className={styles.navBar}><div className={styles.kirokuLogo}></div>
+      <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div>
+      <div className={styles.navList}>Contact</div>
+      <div className={styles.navList}>About</div>
       <div className={styles.template}>
         {Sections}
       </div >
+      <div className={styles.cardConatiner}>An AI dental assistant.</div>
       </div>
     );
   }
