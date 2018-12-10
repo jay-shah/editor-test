@@ -22,4 +22,3 @@ const TitleComponent = ({ titleKey, title, onMouseEnterTitle, onMouseLeaveTitle,
     )
 }
 export default TitleComponent
-

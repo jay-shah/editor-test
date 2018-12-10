@@ -23,8 +23,12 @@
   src: url('./fonts/Gordita-Light.otf') format('otf');
   /* Pretty Modern Browsers */
   font-family: 'Gordita-Medium';
+<<<<<<< HEAD
   src: url('./fonts/Gordita-Medium.otf') format('otf')
     /* Pretty Modern Browsers */
+=======
+  src: url('./fonts/Gordita-Medium.otf') format('otf')/* Pretty Modern Browsers */
+>>>>>>> card done
 }
 
 body {
@@ -49,24 +53,31 @@ button {
   font-size: 12px;
   color: var(--moorgate);
   letter-spacing: -0.125px;
+<<<<<<< HEAD
+=======
+  transition-timing-function: ease-out;
+  transition: 0.25s;
+>>>>>>> card done
 }
 
 button:hover {
   background: rgba(210, 221, 225, 0.35);
   font-family: Gordita-Medium;
-  font-size: 11px;
+  transition-timing-function: ease-in;
+  transition: 0.25s;
 }
 
 .template {
   border: 1px solid var(--hammersmith);
   border-bottom: 0px;
   border-radius: 4px;
-  width: 860px;
+  width: 60%;
   text-align: center;
   min-height: 400px;
   margin-top: 40px;
   margin-left: 80px;
   background-color: white;
+  float: left;
 }
 
 .section {
@@ -82,6 +93,7 @@ button:hover {
   color: var(--moorgate);
   letter-spacing: -0.125px;
   text-align: left;
+  border-bottom: 1px solid var(--enamel);
 }
 
 .titleWriting {
@@ -94,6 +106,7 @@ button:hover {
 
 .note {
   padding-bottom: 16px;
+  padding-top: 16px;
   color: var(--moorgate);
   font-family: Gordita-Regular;
   font-size: 12px;
@@ -102,6 +115,7 @@ button:hover {
 }
 
 /* Removes the ugly blue line from content editable */
+
 [contenteditable]:focus {
   outline: 0px solid transparent;
 }
@@ -165,27 +179,133 @@ button:hover {
   padding-bottom: 12px;
   padding-left: 22px;
   padding-right: 22px;
+  transition-timing-function: ease-in;
+  transition: 0.25s;
 }
 
 .signupButton:hover {
   background: var(--galloway);
+<<<<<<< HEAD
   box-shadow: 0 2px 9px 0 rgba(0, 122, 135, 0.30);
+=======
+  box-shadow: 0 2px 9px 0 rgba(0, 122, 135, 0.60);
+>>>>>>> card done
   font-family: Gordita-Medium;
   font-size: 14px;
+  transition-timing-function: ease-out;
+  transition: 0.25s;
 }
 
 .cardConatiner {
   background: #FFFFFF;
   border: 1px solid var(--hammersmith);
   border-radius: 4px;
-  padding-left: 64px;
-  padding-right: 64px;
+  padding-left: 48px;
+  padding-right: 48px;
+  width: 380px;
+  float: right;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 80px;
 }
 
 .cardImage {
-  background: #FFFFFF;
-  border: 1px solid var(--hammersmith);
+  background-image: url('./images/card-image.svg');
+  height: 180px;
+  width: 207px;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+
+.cardTitle {
+  font-family: Gordita-Regular;
+  font-size: 24px;
+  color: #414141;
+  letter-spacing: -0.25px;
+  text-align: center;
+  line-height: 30px;
+  padding-bottom: 24px;
+  padding-top: 24px;
+}
+
+.cardParagraph {
+  /* Kiroku lets you spen: */
+  opacity: 0.75;
+  font-family: Gordita-Regular;
+  font-size: 16px;
+  color: #414141;
+  letter-spacing: -0.25px;
+  text-align: center;
+  line-height: 20px;
+  padding-bottom: 24px;
+}
+
+.cardButton {
+  /* Rectangle 7: */
+  background: var(--clinic);
   border-radius: 4px;
+  border-radius: 4px;
+  font-family: Gordita-Medium;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  height: 40px;
+  border: 0px;
+  border-radius: 4px;
+<<<<<<< HEAD
   padding-left: 64px;
   padding-right: 64px;
 }
+=======
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-family: Gordita-Medium;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  margin: auto;
+  width: 282px;
+  margin-bottom: 56px;
+  transition-timing-function: ease-out;
+  transition: 0.25s;
+}
+
+.cardButton:hover {
+  /* Rectangle 7: */
+  background: var(--clinic);
+  box-shadow: 0 2px 9px 4px rgba(88, 144, 255, 0.30);
+  transition-timing-function: ease-in;
+  cursor: pointer;
+  transition: 0.25s;
+  border-radius: 4px;
+  border-radius: 4px;
+  border-radius: 4px;
+  font-family: Gordita-Medium;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  height: 40px;
+  border: 0px;
+  border-radius: 4px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-family: Gordita-Medium;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  margin: auto;
+  width: 282px;
+  margin-bottom: 56px;
+}
+
+.trashNote {
+}
+>>>>>>> card done
