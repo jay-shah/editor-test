@@ -12,6 +12,12 @@
 
 /* Link these to the pattern library */
 
+@font-face {
+  font-family: 'Gordita';
+  src: url('../fonts/Gordita-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Gordita-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
 body {
   background-color: var(--base-one) !important;
 }
@@ -36,7 +42,7 @@ body {
 }
 
 .title {
-  font-family: Gordita-Bold;
+  font-family: Gordita;
   font-size: 14px;
   color: var(--moorgate);
   letter-spacing: -0.125px;
