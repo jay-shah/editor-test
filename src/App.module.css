@@ -14,38 +14,45 @@
 
 @font-face {
   font-family: 'Gordita-Regular';
-  src: url('./fonts/Gordita-Regular.woff') format('woff'); /* Pretty Modern Browsers */
+  src: url('./fonts/Gordita-Regular.woff') format('woff');
+  /* Pretty Modern Browsers */
   font-family: 'Gordita-Bold';
-  src: url('./fonts/Gordita-Bold.otf') format('otf'); /* Pretty Modern Browsers */
+  src: url('./fonts/Gordita-Bold.otf') format('otf');
+  /* Pretty Modern Browsers */
   font-family: 'Gordita-Light';
-  src: url('./fonts/Gordita-Light.otf') format('otf'); /* Pretty Modern Browsers */
+  src: url('./fonts/Gordita-Light.otf') format('otf');
+  /* Pretty Modern Browsers */
   font-family: 'Gordita-Medium';
-  src: url('./fonts/Gordita-Medium.otf') format('otf') /* Pretty Modern Browsers */
+  src: url('./fonts/Gordita-Medium.otf') format('otf')
+    /* Pretty Modern Browsers */
 }
 
 body {
   background-color: var(--base-one) !important;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: Gordita-Medium !important;
   font-weight: 100;
 }
 
+
 button {
- border: 1px solid var(--hammersmith);
- padding-top: 16px;
- padding-bottom: 16px;
- padding-left: 22px;
- padding-right: 22px;
- font-family: Gordita-Regular;
- font-size: 12px;
- color: var(--moorgate);
- letter-spacing: -0.125px;
+  border: 1px solid var(--hammersmith);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-family: Gordita-Regular;
+  font-size: 12px;
+  color: var(--moorgate);
+  letter-spacing: -0.125px;
 }
 
 button:hover {
-  background: rgba(210,221,225,0.35);
+  background: rgba(210, 221, 225, 0.35);
   font-family: Gordita-Medium;
   font-size: 11px;
 }
@@ -117,6 +124,7 @@ button:hover {
   padding-bottom: 22px;
   border-bottom: 1px solid var(--hammersmith)
 }
+
 .kirokuLogo {
   background-image: url('./images/logo.svg');
   height: 34px;
@@ -145,7 +153,7 @@ button:hover {
   background: var(--galloway);
   border-radius: 4px;
   font-family: Gordita-Medium;
-  box-shadow: 0 2px 9px 0 rgba(0,122,135,0.30);
+  box-shadow: 0 2px 9px 0 rgba(0, 122, 135, 0.30);
   font-size: 14px;
   color: #FFFFFF;
   letter-spacing: 0;
@@ -161,7 +169,7 @@ button:hover {
 
 .signupButton:hover {
   background: var(--galloway);
-  box-shadow: 0 2px 9px 0 rgba(0,122,135,0.30);
+  box-shadow: 0 2px 9px 0 rgba(0, 122, 135, 0.30);
   font-family: Gordita-Medium;
   font-size: 14px;
 }

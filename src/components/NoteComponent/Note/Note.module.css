@@ -1,0 +1,8 @@
+.note {
+    /* display: inline; */
+    position: relative;
+    left: 8px;
+    min-width: 200px !important;
+    display: inline-block;
+    /* border: 1px solid black; */
+}

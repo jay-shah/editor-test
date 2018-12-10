@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import { Icon } from 'semantic-ui-react'
 import templateData from './data/template.json'
 import TitleComponent from './components/TitleComponent/TitleComponent'
+import NoteComponent from './components/NoteComponent/NoteComponent'
 
 class App extends Component {
 
@@ -38,6 +39,7 @@ class App extends Component {
     this.refList.push(key)
     return (
       <TitleComponent
+        key={key}
         titleKey={key}
         title={title}
         onMouseEnterTitle={this.onMouseEnterTitle}
@@ -56,28 +58,19 @@ class App extends Component {
 
       let parsedNote = this.getNote(note, title, noteIndex)
       return (
-        <div
+        <NoteComponent
           key={key}
-          className={styles.note}
-          onMouseEnter={() => this.onMouseEnterNote(key)}
-          onMouseLeave={this.onMouseLeaveNote}
-
-        >
-          <Icon
-            name='trash'
-            style={this.state.key === key ? { visibility: 'visible' } : { visibility: 'hidden' }}
-            onClick={() => this.trashClickNote(title, noteIndex)}
-          />
-          <div contentEditable={true}
-            suppressContentEditableWarning
-            onKeyDown={(e) => this.onKeyDownNote(e, title, noteIndex)}
-            className={styles.noteWriting}
-            onBlur={(e) => this.onBlur(e, title, noteIndex)}
-            ref={key}
-          >
-            {parsedNote}
-          </div>
-        </div >
+          noteKey={key}
+          title={title}
+          noteIndex={noteIndex}
+          note={parsedNote}
+          onMouseEnterNote={this.onMouseEnterNote}
+          onMouseLeaveNote={this.onMouseLeaveNote}
+          onKeyDownNote={this.onKeyDownNote}
+          onBlurNote={this.onBlurNote}
+          trashClickNote={this.trashClickNote}
+          onMouseKey={this.state.key}
+        />
       )
     })
     return listNotes
@@ -97,9 +90,9 @@ class App extends Component {
       let notesWithTemplateOptions = []
       notesWithTemplateOptions = this.getNotesWithTemplateOptions(note, templateOptions, notesWithTemplateOptions, title, noteIndex)
       return (
-        <span>
+        <div>
           {notesWithTemplateOptions}
-        </span>
+        </div>
       )
     }
 
@@ -135,11 +128,13 @@ class App extends Component {
     return infixList.map((infix, index) => {
       const key = `${infix}-${index}`
       return (
-        <button key={key}
+        <button
+          className={styles.button}
+          key={key}
           prefix={prefix}
           suffix={suffix}
           value={infix}
-          onClick={(e) => this.buttonClick(e, infix, prefix, suffix, title, noteIndex)}>
+          onMouseDown={(e) => this.buttonClick(e, infix, prefix, suffix, title, noteIndex)}>
           {infix}
         </button>
       );
@@ -151,8 +146,6 @@ class App extends Component {
     let data = this.state.data
     data[titleData['titleIndex']][title][noteIndex] = `${prefix} ${infix} ${suffix}`
     this.setState({ data })
-
-
   }
 
 
@@ -229,29 +222,22 @@ class App extends Component {
     return { titleIndex, noteIndex }
   }
 
-
-
-
-
-  onBlur = (e, title, noteIndex) => {
+  onBlurNote = (e, title, noteIndex) => {
     const containsButtons = e.target.innerHTML.includes('button')
-
+    console.log(e.target.tagName)
     if (containsButtons) {
       return
     }
-
-    else if (e.target.tagName === 'BUTTON') {
+    if (e.target.tagName === 'BUTTON') {
       return
     }
     else {
-
       let text = e.target.textContent
       const titleData = this.getTitleData(title)
       let data = this.state.data
       data[titleData['titleIndex']][title][noteIndex] = text
       this.setState({ data })
     }
-
   }
 
 
@@ -270,6 +256,7 @@ class App extends Component {
         this.refs[this.refList[refIndex + 1]].focus()
       }, 0)
     }
+
     if (e.key === 'ArrowDown') {
       if (this.refList[refIndex + 1]) {
         this.refs[this.refList[refIndex + 1]].focus()
@@ -300,7 +287,6 @@ class App extends Component {
       setTimeout(() => {
         this.refs[this.refList[refIndex + 1]].focus()
       }, 0)
-
 
     }
     if (e.key === 'ArrowDown') {
@@ -351,17 +337,17 @@ class App extends Component {
     const Sections = this.renderData(this.state.data)
     return (
       <div className={styles.navBar}><div className={styles.kirokuLogo}></div>
-      <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div>
-      <div className={styles.navList}>Contact</div>
-      <div className={styles.navList}>About</div>
-      <div className={styles.template}>
-        {Sections}
-      </div >
-      <div className={styles.cardConatiner}>
-      <div className={styles.cardImage}></div>
-        <div className={styles.cardTitle}>An AI dental assistant.</div>
-        <div className={styles.cardParagraph}> Kiroku lets you spend significantly less time writing clinical notes.</div>
-        <button className={styles.cardButton}>Learn more</button>
+        <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div>
+        <div className={styles.navList}>Contact</div>
+        <div className={styles.navList}>About</div>
+        <div className={styles.template}>
+          {Sections}
+        </div >
+        <div className={styles.cardConatiner}>
+          <div className={styles.cardImage}></div>
+          <div className={styles.cardTitle}>An AI dental assistant.</div>
+          <div className={styles.cardParagraph}> Kiroku lets you spend significantly less time writing clinical notes.</div>
+          <button className={styles.cardButton}>Learn more</button>
         </div>
       </div>
     );
