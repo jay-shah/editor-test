@@ -1,34 +1,59 @@
+:root {
+  --base-one: #FAFAFA;
+  --base-two: #131313;
+  --galloway: #007A87;
+  --moorgate: #6A7F95;
+  --finsbury: #005744;
+  --enamel: #D2DDE1;
+  --barray: #C5E8FF;
+  --clinic: #5890FF;
+  --hammersmith: #EEEEEE;
+}
+
+/* Link these to the pattern library */
+
+body {
+  background-color: var(--base-one) !important;
+}
+
 .template {
-  margin: auto;
-  border: 1px solid black;
+  border: 1px solid var(--hammersmith);
   border-bottom: 0px;
-  width: 700px;
+  border-radius: 4px;
+  width: 860px;
   text-align: center;
   min-height: 400px;
   margin-top: 100px;
+  margin-left: 80px;
+  background-color: white;
 }
 
 .section {
   text-align: left;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--hammersmith);
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .title {
-  padding-left: 20px;
+  font-family: Gordita-Bold;
+  font-size: 14px;
+  color: var(--moorgate);
+  letter-spacing: -0.125px;
+  text-align: left;
 }
 
 .titleWriting {
   position: relative;
-  left: 5px;
+  margin-left: 24px;
   min-width: 200px !important;
   display: inline-block;
-  /* border: 1px solid black; */
+  padding-bottom: 16px;
 }
 
 .note {
-  padding: 5px;
+  padding-bottom: 16px;
+  color: var(--moorgate);
   /* border: 1px solid black; */
 }
 
@@ -40,7 +65,7 @@
 .noteWriting {
   /* display: inline; */
   position: relative;
-  left: 20px;
+  left: 4px;
   min-width: 200px !important;
   display: inline-block;
   /* border: 1px solid black; */

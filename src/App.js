@@ -350,6 +350,7 @@ class App extends Component {
     this.refList = []
     const Sections = this.renderData(this.state.data)
     return (
+<<<<<<< HEAD
       <div >
         <div className={styles.template} id='thisistheid'>
           {Sections}
@@ -357,6 +358,12 @@ class App extends Component {
 
 
         <button onClick={this.handleCopy}>  COPY </button>
+=======
+      <div className={styles.testnav}>Test
+      <div className={styles.template}>
+        {Sections}
+      </div >
+>>>>>>> initial styles
       </div>
     );
   }
