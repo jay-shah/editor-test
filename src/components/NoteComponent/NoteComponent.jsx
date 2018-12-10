@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styles from './NoteComponent.module.css'
 import { Icon } from 'semantic-ui-react'
 import Note from './Note/Note'
 
-const NoteComponent = ({ noteKey, note, title, noteIndex, onMouseEnterNote, onMouseLeaveNote, trashClickNote, onKeyDownNote, onBlurNote, onMouseKey }) => {
+const NoteComponent = ({ noteKey, note, title, noteIndex, onMouseEnterNote, onMouseLeaveNote, trashClickNote, onKeyDownNote, onBlurNote, onMouseKey, addRef }) => {
     return (
         <div
             key={noteKey}
@@ -19,10 +19,11 @@ const NoteComponent = ({ noteKey, note, title, noteIndex, onMouseEnterNote, onMo
             />
 
             <Note
+                addRef={addRef}
                 note={note}
                 noteKey={noteKey}
                 title={title}
-                noteInde={noteIndex}
+                noteIndex={noteIndex}
                 onBlurNote={(e) => onBlurNote(e, title, noteIndex)}
                 onKeyDownNote={onKeyDownNote}
             />
