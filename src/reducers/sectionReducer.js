@@ -1,8 +1,8 @@
-const defaultState = {
+const initialState = {
     key: null
 }
 
-export const sectionReducer = (state = defaultState, action) => {
+export const sectionReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case "MOUSE_ENTER_TRASH_TITLE_ICON":
