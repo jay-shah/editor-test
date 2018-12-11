@@ -13,19 +13,33 @@
 
 /* Link these to the pattern library */
 
-@font-face {
+/* @font-face {
   font-family: 'Gordita-Regular';
-  src: url('./fonts/Gordita-Regular.woff') format('woff');
-  /* Pretty Modern Browsers */
+  src: url('./fonts/Gordita-Regular.ttf') format('ttf');
   font-family: 'Gordita-Bold';
   src: url('./fonts/Gordita-Bold.otf') format('otf');
-  /* Pretty Modern Browsers */
   font-family: 'Gordita-Light';
   src: url('./fonts/Gordita-Light.otf') format('otf');
-  /* Pretty Modern Browsers */
   font-family: 'Gordita-Medium';
-  src: url('./fonts/Gordita-Medium.otf') format('otf')
-    /* Pretty Modern Browsers */
+  src: url('./fonts/Gordita-Medium.otf') format('otf');
+}
+*/
+
+@font-face {
+    font-family: 'gorditaregular';
+    src: url('./fonts/gordita-regular-webfont.woff2') format('woff2'),
+         url('./fonts/gordita-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gorditamedium';
+    src: url('./fonts/gordita-medium-webfont.woff2') format('woff2'),
+         url('./fonts/gordita-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 textarea,
@@ -55,7 +69,7 @@ body {
   padding-bottom: 16px;
   padding-left: 22px;
   padding-right: 22px;
-  font-family: Gordita-Regular;
+  font-family: gorditaregular;
   font-size: 14px;
   color: #1B2733;
   letter-spacing: -0.125px;
@@ -102,7 +116,7 @@ body {
   margin-top: 40px;
   margin-left: 80px;
   text-align: left;
-  font-family: Gordita-Medium;
+  font-family: gorditamedium;
   font-size: 24px;
   color: #484848;
   letter-spacing: -0.25px;
@@ -209,7 +223,7 @@ body {
 .note {
   padding-bottom: 16px;
   padding-top: 16px;
-  font-family: Gordita-Regular;
+  font-family: gorditaregular;
   font-size: 14px;
   letter-spacing: -0.125px;
   /* border: 1px solid black; */
@@ -252,7 +266,7 @@ body {
   float: right;
   padding-right: 24px;
   line-height: 35px;
-  font-family: Gordita-Medium;
+  font-family: gorditamedium;
   font-size: 14px;
   color: #484848;
   letter-spacing: -0.08px;
@@ -267,7 +281,7 @@ body {
 .signupButton {
   background: var(--galloway);
   border-radius: 4px;
-  font-family: Gordita-Medium;
+  font-family: gorditamedium;
   font-size: 14px;
   color: #FFFFFF;
   letter-spacing: 0;
@@ -275,8 +289,8 @@ body {
   height: 36px;
   border: 0px;
   border-radius: 4px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   padding-left: 22px;
   padding-right: 22px;
   transition-timing-function: ease-in;
@@ -287,7 +301,7 @@ body {
 .signupButton:hover {
   background: var(--galloway);
   box-shadow: 0 4px 9px 0 rgba(0, 122, 135, 0.60);
-  font-family: Gordita-Medium;
+  font-family: gorditamedium;
   font-size: 14px;
   transition-timing-function: ease-out;
   transition: 0.25s;
@@ -378,7 +392,7 @@ body {
 }
 
 .cardTitle {
-  font-family: Gordita-Regular;
+  font-family: gorditaregular;
   font-size: 24px;
   color: #414141;
   letter-spacing: -0.25px;
@@ -391,7 +405,7 @@ body {
 .cardParagraph {
   /* Kiroku lets you spen: */
   opacity: 0.75;
-  font-family: Gordita-Regular;
+  font-family: gorditaregular;
   font-size: 16px;
   color: #414141;
   letter-spacing: -0.25px;
@@ -405,7 +419,7 @@ body {
   background: var(--clinic);
   border-radius: 4px;
   border-radius: 4px;
-  font-family: Gordita-Medium;
+  font-family: gorditamedium;
   font-size: 14px;
   color: #FFFFFF;
   letter-spacing: 0;
@@ -413,11 +427,11 @@ body {
   height: 40px;
   border: 0px;
   border-radius: 4px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   padding-left: 22px;
   padding-right: 22px;
-  font-family: Gordita-Medium;
+  font-family: gorditamedium;
   font-size: 16px;
   color: #FFFFFF;
   letter-spacing: 0;
@@ -440,7 +454,7 @@ body {
   border-radius: 4px;
   border-radius: 4px;
   border-radius: 4px;
-  font-family: Gordita-Medium;
+  font-family: gorditamedium;
   font-size: 14px;
   color: #FFFFFF;
   letter-spacing: 0;
@@ -448,11 +462,11 @@ body {
   height: 40px;
   border: 0px;
   border-radius: 4px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   padding-left: 22px;
   padding-right: 22px;
-  font-family: Gordita-Medium;
+  font-family: gorditamedium;
   font-size: 16px;
   color: #FFFFFF;
   letter-spacing: 0;
