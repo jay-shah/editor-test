@@ -1,7 +1,9 @@
 .sectionIconHovered {
     text-align: left;
     border-bottom: 1px solid var(--hammersmith);
-    background-color: var(--enamel);
+    background-color: rgba(210,221,225,0.35);
+    transition-timing-function: ease-in;
+    transition: 0.15s;
 }
 
 .sectionIconHovered:first-child {

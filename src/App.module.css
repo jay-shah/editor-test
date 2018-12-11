@@ -42,6 +42,11 @@ body {
   background-color: #F7F9FA !important;
 }
 
+::selection {
+  background: var(--gelt); /* WebKit/Blink Browsers */
+  color: var(--base-two);
+}
+
 .noteButton {
   border: 1px solid var(--hammersmith);
   border-left: 0;

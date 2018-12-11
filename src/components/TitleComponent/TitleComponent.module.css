@@ -3,6 +3,12 @@
   border-bottom: none;
 }
 
+.titleComponent:hover {
+  background: rgba(210,221,225,0.35);
+  transition-timing-function: ease-in;
+  transition: 0.2s
+}
+
 .titleComponent:first-child {
   border-bottom: 1px solid var(--hammersmith);
 }
