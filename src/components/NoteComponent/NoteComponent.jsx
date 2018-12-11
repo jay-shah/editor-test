@@ -36,6 +36,7 @@ const NoteComponent = ({
                 noteIndex={noteIndex}
                 onBlurNote={(e) => onBlurNote(e, title, noteIndex)}
                 onKeyDownNote={onKeyDownNote}
+                className={styles.noteLine}
             />
         </div >
     )
