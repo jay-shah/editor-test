@@ -7,6 +7,9 @@
     letter-spacing: -0.125px;
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 .noteComponent:hover {
@@ -19,16 +22,20 @@
 
 .trashNote {
   background-image: url('./icon/cross.svg');
-  display: inline-block;
+  display: table-cell;
+  vertical-align: middle;
   background-repeat: no-repeat;
   width: 14px;
   height: 14px;
-  margin-left: 6px;
-  vertical-align: sub;
+  margin-left: 8px;
+  margin-right: 8px;
   cursor: pointer;
   opacity: 0.5;
   transition-timing-function: ease-in;
   transition: 0.1s;
+  float: left;
+  position: relative;
+  z-index: 100
 }
 
 .trashNote:hover {

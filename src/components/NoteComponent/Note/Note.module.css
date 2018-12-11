@@ -2,7 +2,5 @@
     /* display: inline; */
     position: relative;
     left: 8px;
-    min-width: 90% !important;
     display: inline-block;
-    /* border: 1px solid black; */
 }
