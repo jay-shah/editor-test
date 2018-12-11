@@ -3,11 +3,14 @@
     left: 5px;
     min-width: 90% !important;
     display: inline-block;
-    padding-bottom: 16px;
+    padding-bottom: 0px;
     letter-spacing: -0.125px;
     color: var(--moorgate);
 }
 
 h3 {
   font-family: Gordita-Regular !important;
+  font-weight: 300;
+  font-size: 16px;
+  color: #1B2733;
 }

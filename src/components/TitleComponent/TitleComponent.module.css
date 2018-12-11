@@ -20,7 +20,7 @@
   transition-timing-function: ease-in !important;
   transition: 0.1s !important;
   float: right !important;
-  margin-top: 6px !important;
+  margin-top: 24px !important;
 }
 
 .trashTitle:hover {

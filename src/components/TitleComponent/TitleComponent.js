@@ -23,10 +23,10 @@ const TitleComponent = ({
                 onKeyDownTitle={onKeyDownTitle}
                 title={title}
                 addRef={addRef} />
-            {/* <Icon
+             <div
                 className={styles.trashTitle}
                 style={onMouseKey === titleKey ? { visibility: 'visible' } : { visibility: 'hidden' }}
-                onClick={() => trashClickTitle(title)} /> */}
+                onClick={() => trashClickTitle(title)} />
         </div >
     )
 }
