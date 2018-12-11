@@ -8,6 +8,7 @@
   --barray: #C5E8FF;
   --clinic: #5890FF;
   --hammersmith: #EEEEEE;
+  --gelt: #FFB100;
 }
 
 /* Link these to the pattern library */
@@ -38,7 +39,7 @@ border-radius: 0;
 }
 
 body {
-  background-color: var(--base-one) !important;
+  background-color: #F7F9FA !important;
 }
 
 .noteButton {
@@ -82,7 +83,7 @@ body {
 }
 
 .template {
-  border: 1px solid var(--hammersmith);
+  border: 1px solid #E6E8EB;
   border-bottom: 0px;
   border-radius: 4px;
   width: 60%;
