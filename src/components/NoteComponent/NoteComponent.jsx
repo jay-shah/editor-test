@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './NoteComponent.module.css'
 import Note from './Note/Note'
+import TrashNoteIcon from './TrashNoteIcon'
 
 const NoteComponent = ({
     noteKey,
@@ -22,12 +23,14 @@ const NoteComponent = ({
             onMouseEnter={() => onMouseEnterNote(noteKey)}
             onMouseLeave={onMouseLeaveNote}
         >
-            <div
-                name='trash'
-                className={styles.trashNote}
-                style={onMouseKey === noteKey ? { visibility: 'visible' } : { visibility: 'hidden' }}
-                onClick={() => trashClickNote(title, noteIndex)}
+            <TrashNoteIcon
+                onMouseKey={onMouseKey}
+                noteKey={noteKey}
+                title={title}
+                trashClickNote={trashClickNote}
+                noteIndex={noteIndex}
             />
+
             <Note
                 addRef={addRef}
                 note={note}
