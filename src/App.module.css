@@ -98,6 +98,7 @@ body {
 .section {
   text-align: left;
   border-bottom: 1px solid var(--hammersmith);
+  background-color: var(--enamel);
 }
 
 .section:first-child {

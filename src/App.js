@@ -340,6 +340,7 @@ class App extends Component {
     document.execCommand("copy");
   }
 
+
   render() {
     this.refList = []
     const Sections = this.renderData(this.state.data)
