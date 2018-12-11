@@ -6,7 +6,7 @@
   background-color: var(--galloway);
   float: left;
   position: fixed;
-  z-index: 99;
+  z-index: 80;
   overflow: hidden;
   cursor: pointer;
   padding-top: 12px;
