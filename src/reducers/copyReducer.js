@@ -1,8 +1,8 @@
-const defaultState = {
+const initialState = {
     contentEditable: true
 }
 
-export const copyReducer = (state = defaultState, action) => {
+export const copyReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case "TOGGLE_CONTENT_EDITABLE":

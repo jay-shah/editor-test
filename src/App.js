@@ -5,6 +5,8 @@ import TitleComponent from './components/TitleComponent/TitleComponent'
 import NoteComponent from './components/NoteComponent'
 import CopyButton from './components/CopyButton'
 import Section from './components/Section'
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 class App extends Component {
 
@@ -13,13 +15,9 @@ class App extends Component {
     this.state = {
       data: templateData
     }
-    this.inputRef = {}
   }
 
 
-  addRef = (e, refKey) => {
-    this.inputRef[refKey] = e
-  }
 
   renderData = (data) => {
     const sectionData = data.map((section) => {
@@ -44,7 +42,6 @@ class App extends Component {
     this.refList.push(key)
     return (
       <TitleComponent
-        addRef={this.addRef}
         key={key}
         titleKey={key}
         title={title}
@@ -65,7 +62,6 @@ class App extends Component {
       let parsedNote = this.getNote(note, title, noteIndex)
       return (
         <NoteComponent
-          addRef={this.addRef}
           key={key}
           noteKey={key}
           title={title}
@@ -249,10 +245,10 @@ class App extends Component {
 
 
   onKeyDownTitle = (e, title) => {
-    console.log(this.inputRef)
     const titleData = this.getTitleData(title)
     let key = `${title}`.replace(/ /g, '')
     let refIndex = this.refList.indexOf(key)
+    const { inputRef } = this.props;
     if (e.key === 'Enter') {
 
       e.preventDefault()
@@ -260,19 +256,19 @@ class App extends Component {
       data[titleData['titleIndex']][title].splice(0, 0, "")
       this.setState({ data })
       setTimeout(() => {
-        this.inputRef[this.refList[refIndex + 1]].focus()
+        inputRef[this.refList[refIndex + 1]].focus()
       }, 0)
     }
 
     if (e.key === 'ArrowDown') {
       if (this.refList[refIndex + 1]) {
-        this.inputRef[this.refList[refIndex + 1]].focus()
+        inputRef[this.refList[refIndex + 1]].focus()
       }
     }
 
     if (e.key === 'ArrowUp') {
       if (refIndex !== 0) {
-        this.inputRef[this.refList[refIndex - 1]].focus()
+        inputRef[this.refList[refIndex - 1]].focus()
       }
     }
 
@@ -285,6 +281,7 @@ class App extends Component {
     let key = `${title}-${noteIndex}`.replace(/ /g, '')
     let refIndex = this.refList.indexOf(key)
     let data = this.state.data
+    const { inputRef } = this.props;
     if (e.key === 'Enter') {
 
       e.preventDefault()
@@ -292,18 +289,18 @@ class App extends Component {
       this.setState({ data })
 
       setTimeout(() => {
-        this.inputRef[this.refList[refIndex + 1]].focus()
+        inputRef[this.refList[refIndex + 1]].focus()
       }, 0)
 
     }
     if (e.key === 'ArrowDown') {
       if (this.refList[refIndex + 1]) {
-        this.inputRef[this.refList[refIndex + 1]].focus()
+        inputRef[this.refList[refIndex + 1]].focus()
       }
     }
     if (e.key === 'ArrowUp') {
 
-      this.inputRef[this.refList[refIndex - 1]].focus()
+      inputRef[this.refList[refIndex - 1]].focus()
     }
   }
 
@@ -357,4 +354,17 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStatToProps = (state) => {
+  return {
+    inputRef: state.refReducer.inputRef
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+
+  }, dispatch);
+};
+
+export default connect(mapStatToProps, mapDispatchToProps)(App)
+
