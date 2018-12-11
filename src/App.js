@@ -4,6 +4,7 @@ import templateData from './data/template.json'
 import TitleComponent from './components/TitleComponent/TitleComponent'
 import NoteComponent from './components/NoteComponent'
 import CopyButton from './components/CopyButton'
+import Section from './components/Section'
 
 class App extends Component {
 
@@ -33,10 +34,8 @@ class App extends Component {
     const renderTitle = this.renderTitle(title)
     const listNotes = this.renderNotes(notes, title)
     return (
-      <div key={title} className={styles.section}>
-        {renderTitle}
-        {listNotes}
-      </div>
+
+      <Section key={title} title={title} renderTitle={renderTitle} listNotes={listNotes} />
     )
   }
 
