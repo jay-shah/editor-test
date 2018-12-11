@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './NoteComponent.module.css'
-import Note from './Note/Note'
+import Note from './Note'
 import TrashNoteIcon from './TrashNoteIcon'
 
 const NoteComponent = ({
@@ -14,7 +14,6 @@ const NoteComponent = ({
     onKeyDownNote,
     onBlurNote,
     onMouseKey,
-    addRef
 }) => {
     return (
         <div
@@ -32,7 +31,6 @@ const NoteComponent = ({
             />
 
             <Note
-                addRef={addRef}
                 note={note}
                 noteKey={noteKey}
                 title={title}

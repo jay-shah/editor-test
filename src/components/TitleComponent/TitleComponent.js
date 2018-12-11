@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './TitleComponent.module.css'
-import Title from './Title/Title'
+import Title from './Title'
 import TrashTitleIcon from './TrashTitleIcon'
 
 const TitleComponent = ({
@@ -23,7 +23,7 @@ const TitleComponent = ({
                 titlekey={titleKey}
                 onKeyDownTitle={onKeyDownTitle}
                 title={title}
-                addRef={addRef} />
+            />
             <TrashTitleIcon
                 onMouseKey={onMouseKey}
                 titleKey={titleKey}
