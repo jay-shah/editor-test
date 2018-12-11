@@ -232,7 +232,6 @@ class App extends Component {
 
   onBlurNote = (e, title, noteIndex) => {
     const containsButtons = e.target.innerHTML.includes('button')
-    console.log(e.target.tagName)
     if (containsButtons) {
       return
     }
@@ -331,14 +330,6 @@ class App extends Component {
     })
   }
 
-  handleCopy = () => {
-    let range = document.createRange();
-    window.getSelection().removeAllRanges()
-    range.selectNode(document.getElementById('thisistheid'));
-    window.getSelection().addRange(range);
-    document.execCommand("removeFormat");
-    document.execCommand("copy");
-  }
 
 
   render() {

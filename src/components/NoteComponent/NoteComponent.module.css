@@ -1,45 +1,21 @@
 .noteComponent {
-    padding-bottom: 16px;
-    padding-top: 16px;
-    color: #637282;
-    font-family: Gordita-Regular;
-    font-size: 14px;
-    letter-spacing: -0.125px;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  color: #637282;
+  font-family: Gordita-Regular;
+  font-size: 14px;
+  letter-spacing: -0.125px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .noteComponent:hover {
-  background: rgba(210,221,225,0.35);
+  background: rgba(210, 221, 225, 0.35);
   transition-timing-function: ease-in;
   transition: 0.2s;
   border-top: 1px solid var(--hammersmith);
   border-bottom: 1px solid var(--hammersmith);
-}
-
-.trashNote {
-  background-image: url('./icon/cross.svg');
-  display: table-cell;
-  vertical-align: middle;
-  background-repeat: no-repeat;
-  width: 14px;
-  height: 14px;
-  margin-left: 8px;
-  margin-right: 8px;
-  cursor: pointer;
-  opacity: 0.5;
-  transition-timing-function: ease-in;
-  transition: 0.1s;
-  float: left;
-  position: relative;
-  z-index: 100
-}
-
-.trashNote:hover {
-  opacity: 1;
-  transition-timing-function: ease-out;
-  transition: 0.25s;
 }
