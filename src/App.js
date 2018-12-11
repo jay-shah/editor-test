@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import styles from './App.module.css';
 import templateData from './data/template.json'
 import TitleComponent from './components/TitleComponent/TitleComponent'
-import NoteComponent from './components/NoteComponent/NoteComponent'
+import NoteComponent from './components/NoteComponent'
+import CopyButton from './components/CopyButton'
 
 class App extends Component {
 
@@ -360,6 +361,7 @@ class App extends Component {
           <div className={styles.cardParagraph}> Kiroku lets you spend significantly less time writing clinical notes.</div>
           <div><button className={styles.cardButton}>Learn more</button></div>
         </div>
+        <CopyButton />
       </div>
     );
   }
