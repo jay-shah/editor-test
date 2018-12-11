@@ -43,12 +43,13 @@ body {
 }
 
 ::selection {
-  background: var(--gelt); /* WebKit/Blink Browsers */
+  background: var(--barray); /* WebKit/Blink Browsers */
   color: var(--base-two);
 }
 
 .noteButton {
   border: 1px solid var(--hammersmith);
+  background: #fafafa;
   border-left: 0;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -56,13 +57,12 @@ body {
   padding-right: 22px;
   font-family: Gordita-Regular;
   font-size: 14px;
-  color: var(--moorgate);
+  color: #1B2733;
   letter-spacing: -0.125px;
   transition-timing-function: ease-out;
   transition: 0.25s;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: white;
 }
 
 .noteButton {
@@ -87,6 +87,29 @@ body {
   border-left: 1px solid var(--hammersmith);
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.mainTitle {
+  width: 60%;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 80px;
+  text-align: left;
+  font-family: Gordita-Medium;
+  font-size: 24px;
+  color: #484848;
+  letter-spacing: -0.25px;
+  line-height: 30px;
+
+}
+
 .template {
   border: 1px solid #E6E8EB;
   border-bottom: 0px;
@@ -94,11 +117,71 @@ body {
   width: 60%;
   text-align: center;
   min-height: 400px;
-  margin-top: 40px;
+  margin-top: 16px;
   margin-left: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   background-color: white;
   float: left;
+  -webkit-animation: fadein 0.8s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 0.8s; /* Firefox < 16 */
+       -ms-animation: fadein 0.8s; /* Internet Explorer */
+        -o-animation: fadein 0.8s; /* Opera < 12.1 */
+           animation: fadein 0.8s;
+}
+
+@keyframes fadein {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+.template {
+  width: 80%;
+}
 }
 
 .section {
@@ -219,11 +302,71 @@ body {
   width: 14%;
   height: 437px;
   float: right;
-  margin-top: 40px;
+  top: 172px;
   margin-left: 40px;
   margin-right: 80px;
   position: fixed;
   right: 0;
+  -webkit-animation: slidein 1s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: slidein 1s; /* Firefox < 16 */
+       -ms-animation: slidein 1s; /* Internet Explorer */
+        -o-animation: slidein 1s; /* Opera < 12.1 */
+           animation: slidein 1s;
+  }
+
+  @keyframes slidein {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+  }
+
+  /* Firefox < 16 */
+  @-moz-keyframes slidein {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+  }
+
+  /* Safari, Chrome and Opera > 12.1 */
+  @-webkit-keyframes slidein {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes slidein {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+  }
+
+  /* Opera < 12.1 */
+  @-o-keyframes slidein {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+  }
+
+  @media only screen and (max-width: 1100px) {
+  .cardConatiner {
+    display: none;
+  }
 }
 
 .cardImage {
@@ -318,4 +461,18 @@ body {
   margin-bottom: 56px;
 }
 
-.trashNote {}
+.modal {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 45vh;
+  text-align: center;
+  background-color: var(--hammersmith);
+  z-index: 100;
+  position: fixed;
+}
+
+@media only screen and (min-width: 800px) {
+.modal {
+  display: none;
+}
+}

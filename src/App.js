@@ -334,11 +334,18 @@ class App extends Component {
     const Sections = this.renderData(this.state.data)
     return (
       <div>
+      <div className={styles.modal}>
+        Sorry only on desktop.
+      </div >
         <div className={styles.navBar}><div className={styles.kirokuLogo}></div>
           <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div>
           <div className={styles.navList}>Contact</div>
           <div className={styles.navList}>About</div>
         </div>
+        <div className={styles.mainTitle}>
+          Click below to begin editing your notes.
+        </div >
+        <CopyButton/>
         <div className={styles.template} id='thisistheid'>
           {Sections}
         </div >
@@ -348,7 +355,6 @@ class App extends Component {
           <div className={styles.cardParagraph}> Kiroku lets you spend significantly less time writing clinical notes.</div>
           <div><button className={styles.cardButton}>Learn more</button></div>
         </div>
-        <CopyButton />
       </div>
     );
   }

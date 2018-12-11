@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './CopyButton.module.css'
 
 const CopyButton = () => {
 
@@ -14,8 +15,10 @@ const CopyButton = () => {
 
 
     return (
-        <button onClick={handleCopy}>
-            COPY
+        <button
+        className={styles.copyButton}
+        onClick={handleCopy}>
+            <span className={styles.icon} /> Copy notes to clipboard
         </button>
     )
 }
