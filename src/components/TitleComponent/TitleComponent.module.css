@@ -1,6 +1,6 @@
 .titleComponent {
-    padding-left: 20px;
-    border-bottom: none;
+  padding-left: 20px;
+  border-bottom: none;
 }
 
 .titleComponent:first-child {
@@ -8,7 +8,7 @@
 }
 
 .trashTitle {
-  background-image: url('./icon/cross.svg');
+  background-image: url('./TrashTitleIcon/cross.svg');
   display: inline-block !important;
   background-repeat: no-repeat;
   width: 14px !important;
