@@ -1,0 +1,28 @@
+.sectionIconHovered {
+    text-align: left;
+    border-bottom: 1px solid var(--hammersmith);
+    background-color: var(--enamel);
+}
+
+.sectionIconHovered:first-child {
+    text-align: left;
+    border-bottom: none;
+}
+
+.sectionIconHovered:nth-child(2) {
+    border-bottom: none;
+}
+
+.section {
+    text-align: left;
+    border-bottom: 1px solid var(--hammersmith);
+}
+
+.section:first-child {
+    text-align: left;
+    border-bottom: none;
+}
+
+.section:nth-child(2) {
+    border-bottom: none;
+}
