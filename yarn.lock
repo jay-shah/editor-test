@@ -3718,6 +3718,11 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.1"
     readable-stream "^2.0.4"
 
+fn-update@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/fn-update/-/fn-update-1.11.0.tgz#fdea704bc614327d61886c3b6a9df7b6be1aecee"
+  integrity sha512-Zh0NkBShrqASZ0N9TjcNaVm9mhIPU+bRmAP9inmdToe8vcZhA9lfpxoESWfeSxmH7oZrtWz4oUA7yF9vrS/4DQ==
+
 follow-redirects@^1.0.0:
   version "1.5.9"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.9.tgz#c9ed9d748b814a39535716e531b9196a845d89c6"

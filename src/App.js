@@ -7,6 +7,7 @@ import CopyButton from './components/CopyButton'
 import Section from './components/Section'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { updateTemplate, removeSection, removeNote, addNote, addNoteFromTitle } from './actions/templateActions'
 
 class App extends Component {
 
@@ -18,9 +19,10 @@ class App extends Component {
   }
 
 
+  renderData = () => {
 
-  renderData = (data) => {
-    const sectionData = data.map((section) => {
+    const { template } = this.props;
+    const sectionData = template.map((section) => {
       return this.renderSection(section)
     })
     return sectionData
@@ -147,9 +149,10 @@ class App extends Component {
 
   buttonClick = (e, infix, prefix, suffix, title, noteIndex) => {
     const titleData = this.getTitleData(title)
-    let data = this.state.data
-    data[titleData['titleIndex']][title][noteIndex] = `${prefix} ${infix} ${suffix}`
-    this.setState({ data })
+
+    let text = `${prefix} ${infix} ${suffix}`
+    const { updateTemplate } = this.props;
+    updateTemplate(titleData['titleIndex'], noteIndex, title, text)
   }
 
 
@@ -174,21 +177,23 @@ class App extends Component {
 
   trashClickTitle = (title) => {
     const titleData = this.getTitleData(title)
-    let data = this.state.data
-    data.splice(titleData['titleIndex'], 1)
-    this.setState({ data })
+    const { removeSection } = this.props;
+    removeSection(titleData['titleIndex'])
   }
 
   trashClickNote = (title, noteIndex) => {
+
     const titleData = this.getTitleData(title)
-    let data = this.state.data
-    data[titleData['titleIndex']][title].splice(noteIndex, 1)
-    this.setState({ data })
+
+    const { removeNote } = this.props
+    removeNote(titleData['titleIndex'], noteIndex, title)
+
+
   }
 
   getTitleData = (title) => {
     let titleIndex = null
-    this.state.data.map((section, index) => {
+    this.props.template.map((section, index) => {
       if (section[title]) {
         titleIndex = index
         return true
@@ -205,7 +210,7 @@ class App extends Component {
     let sectionData = null
     let noteIndex = null
 
-    this.state.data.map((section, index) => {
+    this.props.template.map((section, index) => {
       if (section[title]) {
 
         titleIndex = index
@@ -237,9 +242,8 @@ class App extends Component {
     else {
       let text = e.target.textContent
       const titleData = this.getTitleData(title)
-      let data = this.state.data
-      data[titleData['titleIndex']][title][noteIndex] = text
-      this.setState({ data })
+      const { updateTemplate } = this.props;
+      updateTemplate(titleData['titleIndex'], noteIndex, title, text)
     }
   }
 
@@ -252,9 +256,10 @@ class App extends Component {
     if (e.key === 'Enter') {
 
       e.preventDefault()
-      let data = this.state.data
-      data[titleData['titleIndex']][title].splice(0, 0, "")
-      this.setState({ data })
+      const { addNoteFromTitle } = this.props;
+      addNoteFromTitle(titleData['titleIndex'], 0, title)
+
+
       setTimeout(() => {
         inputRef[this.refList[refIndex + 1]].focus()
       }, 0)
@@ -280,13 +285,13 @@ class App extends Component {
     const titleData = this.getTitleData(title)
     let key = `${title}-${noteIndex}`.replace(/ /g, '')
     let refIndex = this.refList.indexOf(key)
-    let data = this.state.data
-    const { inputRef } = this.props;
+    const { inputRef, addNote } = this.props;
     if (e.key === 'Enter') {
 
       e.preventDefault()
-      data[titleData['titleIndex']][title].splice(noteIndex + 1, 0, " ")
-      this.setState({ data })
+      // data[titleData['titleIndex']][title].splice(noteIndex + 1, 0, " ")
+
+      addNote(titleData['titleIndex'], noteIndex, title)
 
       setTimeout(() => {
         inputRef[this.refList[refIndex + 1]].focus()
@@ -331,7 +336,7 @@ class App extends Component {
 
   render() {
     this.refList = []
-    const Sections = this.renderData(this.state.data)
+    const Sections = this.renderData()
     return (
       <div>
       <div className={styles.modal}>
@@ -375,13 +380,19 @@ class App extends Component {
 
 const mapStatToProps = (state) => {
   return {
-    inputRef: state.refReducer.inputRef
+    inputRef: state.refReducer.inputRef,
+    // template: state.templateReducer.templateIds.map(id => state.templateReducer.template[id])
+    template: state.templateReducer.template
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-
+    updateTemplate,
+    removeSection,
+    removeNote,
+    addNote,
+    addNoteFromTitle
   }, dispatch);
 };
 
