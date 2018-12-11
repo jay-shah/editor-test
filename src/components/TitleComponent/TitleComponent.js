@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './TitleComponent.module.css'
 import Title from './Title/Title'
+import TrashTitleIcon from './TrashTitleIcon'
 
 const TitleComponent = ({
     titleKey,
@@ -23,10 +24,12 @@ const TitleComponent = ({
                 onKeyDownTitle={onKeyDownTitle}
                 title={title}
                 addRef={addRef} />
-             <div
-                className={styles.trashTitle}
-                style={onMouseKey === titleKey ? { visibility: 'visible' } : { visibility: 'hidden' }}
-                onClick={() => trashClickTitle(title)} />
+            <TrashTitleIcon
+                onMouseKey={onMouseKey}
+                titleKey={titleKey}
+                title={title}
+                trashClickTitle={trashClickTitle}
+            />
         </div >
     )
 }
