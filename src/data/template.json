@@ -19,8 +19,8 @@
             "Using [fluoride 1450 ppm/fluoride free] toothpaste",
             "Flossing: [Nil / Occasionally / Daily]",
             "Interdental brushes: [Nil / Occasionally / daily]",
-            "Mouthwash: [ Listerine/ Plax/ Corsodyl/ Fluoride/ Chlorhexidine] [ once/ twice] a day",
-            "Last Visit: [3 months / 6 months / 9 months / 12 months / 18 months / Over 2 years / Over 5 years / Never / ]"
+            "Mouthwash: [ Listerine/ Plax/ Corsodyl/ Fluoride/ Chlorhexidine] [once/ twice] a day",
+            "Last Visit: [3 months / 6 months / 9 months / 12 months / 18 months / Over 2 years / Over 5 years / Never / Other ]"
         ]
     },
     {
@@ -44,11 +44,11 @@
     },
     {
         "Intra Oral Exam": [
-            "Floor of Mouth: [Nil /            ]",
-            "Soft Palate: [Nil /            ]",
-            "Hard Palate: [Nil /            ]",
-            "Tongue: [Nil /            ]",
-            "Buccal Mucosa: [Nil /            ]",
+            "Floor of Mouth: [Nil / Other]",
+            "Soft Palate: [Nil / Other]",
+            "Hard Palate: [Nil / Other]",
+            "Tongue: [Nil / Other]",
+            "Buccal Mucosa: [Nil /  Other]",
             "Gingivae: [Healthy / Inflammed]",
             "OH: [ Inadequate / Fair / Good]",
             "Teeth as charted ",
@@ -69,10 +69,10 @@
         "Radiographs": [
             "Bite wing radiographs recorded to asses for Inter-proximal caries, bone loss and other pathology ",
             "Grade: [ 1 / 2 / 3 ]",
-            "Horizontal Bone Loss: [Nil /            ]",
-            "Caries detected: [Nil /            ]",
-            "Pathology Noted: [Nil /            ]",
-            "Other Findings from BWs: [Nil /            ]"
+            "Horizontal Bone Loss: [Nil / Other ]",
+            "Caries detected: [Nil / Other]",
+            "Pathology Noted: [Nil / Other]",
+            "Other Findings from BWs: [Nil / Other]"
         ]
     },
     {

@@ -1,7 +1,7 @@
 .noteComponent {
     padding-bottom: 16px;
     padding-top: 16px;
-    color: #637282;
+    color: #1B2733;
     font-family: Gordita-Regular;
     font-size: 14px;
     letter-spacing: -0.125px;
@@ -11,11 +11,14 @@
     justify-content: left;
     align-items: center;
     mix-blend-mode: multiply;
+    padding-right: 8px;
+    margin-right: 8px;
 }
 
 .noteComponent:hover {
   background: rgba(210, 221, 225, 0.35);
-  transition-timing-function: ease-in;
+  box-shadow: 8px 0 0 0 rgba(210, 221, 225, 0.35);
+  transition-timing-function: linear;
   transition: 0.2s;
   border-top: 1px solid var(--hammersmith);
   border-bottom: 1px solid var(--hammersmith);
