@@ -50,14 +50,15 @@
             "Tongue: [Nil / Other]",
             "Buccal Mucosa: [Nil /  Other]",
             "Gingivae: [Healthy / Inflammed]",
-            "OH: [ Inadequate / Fair / Good]",
+            "OH: [ Good/ Fair / Inadequate]",
             "Teeth as charted ",
             "[No bleeding on probing / Bleeding on probing]",
             "[No plaque build up / Plaque build up]",
             "[No calculus / Calculus build up anteriors / Calculus build up generalised]",
             "[No tooth surface loss / Tooth surface loss present]",
             "[No clinical caries seen / Caries present on:]",
-            "[No defective restorations / Defective restorations:]"
+            "[No defective restorations / Defective restorations:]",
+            ""
         ]
     },
     {
