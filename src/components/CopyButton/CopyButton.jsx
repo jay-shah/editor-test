@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './CopyButton.module.css'
+import audioUrl from './audio/copy.mp3'
 
 const CopyButton = () => {
 
@@ -9,18 +10,17 @@ const CopyButton = () => {
         window.getSelection().removeAllRanges()
         range.selectNode(document.getElementById('thisistheid'));
         window.getSelection().addRange(range);
-        document.execCommand("removeFormat");
-        document.execCommand("copy");
-        // document.getElementById('copy').play()
-    }
 
+        document.execCommand("copy");
+
+        const audio = new Audio(audioUrl)
+        audio.play()
+    }
 
     return (
         <button
-        className={styles.copyButton}
-        onClick={handleCopy}
-
-        >
+            className={styles.copyButton}
+            onClick={handleCopy}>
             <span className={styles.icon} /> Copy notes to clipboard
         </button>
     )
