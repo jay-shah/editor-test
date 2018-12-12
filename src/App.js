@@ -156,6 +156,11 @@ class App extends Component {
   buttonClick = (e, infix, prefix, suffix, title, noteIndex) => {
     const titleData = this.getTitleData(title)
     let text = `${prefix} ${infix} ${suffix}`
+
+    if (infix.trim() === 'Other') {
+      text = `${prefix} ${suffix}`
+    }
+    
     const { updateTemplate } = this.props;
     updateTemplate(titleData['titleIndex'], noteIndex, title, text)
   }
