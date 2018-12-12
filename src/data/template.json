@@ -8,7 +8,7 @@
         "Medical History": [
             "Checked, See Section",
             "[Fit and well / No changes / Relevant MH:]",
-            "[Conditions / No conditions:]",
+            "[No conditions / Conditions]",
             "[No medication / Medication:]"
         ]
     },
@@ -19,8 +19,8 @@
             "Using [fluoride 1450 ppm/fluoride free] toothpaste",
             "Flossing: [Nil / Occasionally / Daily]",
             "Interdental brushes: [Nil / Occasionally / daily]",
-            "Mouthwash: [ Listerine/ Plax/ Corsodyl/ Fluoride/ Chlorhexidine] [once/ twice] a day",
-            "Last Visit: [3 months / 6 months / 9 months / 12 months / 18 months / Over 2 years / Over 5 years / Never / Other ]"
+            "Mouthwash: [once daily/ twice daily/  Nil]",
+            "Last Visit: [3 m / 6 m / 9 m / 12 m / 18 m / 2 yrs / 5 yrs / Never / Other ]"
         ]
     },
     {
@@ -28,13 +28,13 @@
             "Smoking: [ Never / Ex Smoker / Daily smoker: / Occasional smoker / Using Vape]",
             "Alcohol intake: [ Nil / Units per week:]",
             "Occupation:",
-            "[Anxious / Not anxious]",
+            "[Not anxious / Anxious]",
             "Daily intake of sugary snacks / drinks in between meals: [ Yes / No]"
         ]
     },
     {
         "Extra Oral Exam": [
-            "Asymmetry: Nil",
+            "Asymmetry: [Nil/ Other]",
             "TMJ: [ Nil / Clicking / Pain / Deviations / Restricted]",
             "Muscles of Mastication: [ Nil / Hypertrophic / Tender]",
             "Lymph nodes: [ Nil / Raised firm node:]",
@@ -52,7 +52,7 @@
             "Gingivae: [Healthy / Inflammed]",
             "OH: [ Inadequate / Fair / Good]",
             "Teeth as charted ",
-            "[Bleeding on probing / No bleeding on probing]",
+            "[No bleeding on probing / Bleeding on probing]",
             "[No plaque build up / Plaque build up]",
             "[No calculus / Calculus build up anteriors / Calculus build up generalised]",
             "[No tooth surface loss / Tooth surface loss present]",
