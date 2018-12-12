@@ -76,14 +76,15 @@
         ]
     },
     {
-        "Diagnosis": []
+        "Diagnosis": [""]
     },
     {
-        "Treatment Options": []
+        "Treatment Options": [""]
     },
     {
         "Treatment Plan": [
-            "Oral Hygiene instructions given to brush brush twice daily with fluoride toothpaste, Interdental cleaning with floss / tepe and restrict sugars and acids in between meals"
+            "Oral Hygiene instructions given to brush brush twice daily with fluoride toothpaste, Interdental cleaning with floss / tepe and restrict sugars and acids in between meals",
+            ""
         ]
     },
     {
