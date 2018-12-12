@@ -8,6 +8,8 @@ import Section from './components/Section'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { updateTemplate, removeSection, removeNote, addNote, addNoteFromTitle } from './actions/templateActions'
+import SignUpButton from './components/SignUpButton'
+import Modal from './components/Modal'
 
 class App extends Component {
 
@@ -162,6 +164,9 @@ class App extends Component {
 
     const { updateTemplate } = this.props;
     updateTemplate(titleData['titleIndex'], noteIndex, title, text)
+
+
+
   }
 
 
@@ -377,7 +382,8 @@ class App extends Component {
         </div>
         </div >
         <div className={styles.navBar}><div className={styles.kirokuLogo}></div>
-          <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div>
+          {/* <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div> */}
+          <SignUpButton />
           <div className={styles.navList}>Contact</div>
           <div className={styles.navList}>About</div>
         </div>
@@ -397,6 +403,7 @@ class App extends Component {
           <div className={styles.cardParagraph}> Kiroku lets you spend significantly less time writing clinical notes.</div>
           <div><button className={styles.cardButton}>Learn more</button></div>
         </div>
+        <Modal />
       </div>
     );
   }

@@ -27,19 +27,19 @@
 */
 
 @font-face {
-    font-family: 'gorditaregular';
-    src: url('./fonts/gordita-regular-webfont.woff2') format('woff2'),
-         url('./fonts/gordita-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'gorditaregular';
+  src: url('./fonts/gordita-regular-webfont.woff2') format('woff2'),
+    url('./fonts/gordita-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'gorditamedium';
-    src: url('./fonts/gordita-medium-webfont.woff2') format('woff2'),
-         url('./fonts/gordita-medium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'gorditamedium';
+  src: url('./fonts/gordita-medium-webfont.woff2') format('woff2'),
+    url('./fonts/gordita-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 
 }
 
@@ -49,8 +49,8 @@ input[type="text"],
 input[type="button"],
 input[type="submit"],
 .input-checkbox {
--webkit-appearance: none;
-border-radius: 0;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 input,
@@ -65,7 +65,8 @@ body {
 }
 
 ::selection {
-  background: var(--iona); /* WebKit/Blink Browsers */
+  background: var(--iona);
+  /* WebKit/Blink Browsers */
   color: var(--base-two);
 }
 
@@ -87,8 +88,7 @@ body {
   -moz-appearance: none;
 }
 
-.noteButton {
-}
+.noteButton {}
 
 .noteButton:first-child {
   border-left: 1px solid var(--hammersmith);
@@ -113,6 +113,7 @@ body {
   0% {
     transform: translateY(100%);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -144,11 +145,15 @@ body {
   margin-bottom: 60px;
   background-color: white;
   float: left;
-  -webkit-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Safari, Chrome and Opera > 12.1 */
-      -moz-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Firefox < 16 */
-       -ms-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Internet Explorer */
-        -o-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Opera < 12.1 */
-           animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  -webkit-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Firefox < 16 */
+  -ms-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Internet Explorer */
+  -o-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Opera < 12.1 */
+  animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 @keyframes fadein {
@@ -156,6 +161,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -168,6 +174,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -180,6 +187,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -192,6 +200,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -204,6 +213,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -211,9 +221,9 @@ body {
 }
 
 @media only screen and (max-width: 1030px) {
-.template {
-  width: 80%;
-}
+  .template {
+    width: 80%;
+  }
 }
 
 .section {
@@ -291,39 +301,7 @@ body {
   text-align: center;
 }
 
-.signUp {
-  display: inline-block;
-  float: right;
-}
 
-.signupButton {
-  background: var(--galloway);
-  border-radius: 4px;
-  font-family: gorditamedium;
-  font-size: 14px;
-  color: #FFFFFF;
-  letter-spacing: 0;
-  text-align: center;
-  height: 36px;
-  border: 0px;
-  border-radius: 4px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 22px;
-  padding-right: 22px;
-  transition-timing-function: ease-in;
-  transition: 0.25s;
-  cursor: pointer;
-}
-
-.signupButton:hover {
-  background: var(--galloway);
-  box-shadow: 0 4px 9px 0 rgba(0, 122, 135, 0.60);
-  font-family: gorditamedium;
-  font-size: 14px;
-  transition-timing-function: ease-out;
-  transition: 0.25s;
-}
 
 .cardConatiner {
   background: #FFFFFF;
@@ -339,73 +317,82 @@ body {
   margin-right: 80px;
   position: fixed;
   right: 0;
-  -webkit-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Safari, Chrome and Opera > 12.1 */
-      -moz-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Firefox < 16 */
-       -ms-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Internet Explorer */
-        -o-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Opera < 12.1 */
-           animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
-  }
+  -webkit-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Firefox < 16 */
+  -ms-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Internet Explorer */
+  -o-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Opera < 12.1 */
+  animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
 
-  @keyframes slidein {
+@keyframes slidein {
   0% {
     transform: translateX(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateX(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
-  }
+}
 
-  /* Firefox < 16 */
-  @-moz-keyframes slidein {
+/* Firefox < 16 */
+@-moz-keyframes slidein {
   0% {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
-  }
+}
 
-  /* Safari, Chrome and Opera > 12.1 */
-  @-webkit-keyframes slidein {
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes slidein {
   0% {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
-  }
+}
 
-  /* Internet Explorer */
-  @-ms-keyframes slidein {
+/* Internet Explorer */
+@-ms-keyframes slidein {
   0% {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
-  }
+}
 
-  /* Opera < 12.1 */
-  @-o-keyframes slidein {
+/* Opera < 12.1 */
+@-o-keyframes slidein {
   0% {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
-  }
+}
 
-  @media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1100px) {
   .cardConatiner {
     display: none;
   }
@@ -531,6 +518,7 @@ body {
   z-index: 100;
   overflow: visible;
 }
+
 .flightPreloader svg path {
   fill-opacity: 1;
   stroke: #fff;
@@ -540,19 +528,21 @@ body {
   stroke-linecap: round;
   animation: draw 2.5s infinite linear;
 }
+
 @keyframes draw {
   100% {
     stroke-dashoffset: 0;
   }
+
   0% {
     stroke-dashoffset: 1340;
   }
 }
 
 @media only screen and (min-width: 800px) {
-.modal {
-  display: none;
-}
+  .modal {
+    display: none;
+  }
 }
 
 .copyNotification {
@@ -580,17 +570,21 @@ body {
   transition-timing-function: ease-in;
   transition: 0.25s;
   animation-direction: alternate;
-  -webkit-animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Safari, Chrome and Opera > 12.1 */
-      -moz-animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Firefox < 16 */
-       -ms-animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Internet Explorer */
-        -o-animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Opera < 12.1 */
-           animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  -webkit-animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Firefox < 16 */
+  -ms-animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Internet Explorer */
+  -o-animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+  /* Opera < 12.1 */
+  animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 @media only screen and (max-width: 1030px) {
-.copyNotification {
-  width: 80%;
-}
+  .copyNotification {
+    width: 80%;
+  }
 }
 
 @keyframes fadeout {
@@ -598,6 +592,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -610,6 +605,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -622,6 +618,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -634,6 +631,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -646,6 +644,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);

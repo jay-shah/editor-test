@@ -1,0 +1,33 @@
+.signUp {
+    display: inline-block;
+    float: right;
+}
+
+.signupButton {
+    background: var(--galloway);
+    border-radius: 4px;
+    font-family: gorditamedium;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    height: 36px;
+    border: 0px;
+    border-radius: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 22px;
+    padding-right: 22px;
+    transition-timing-function: ease-in;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.signupButton:hover {
+    background: var(--galloway);
+    box-shadow: 0 4px 9px 0 rgba(0, 122, 135, 0.60);
+    font-family: gorditamedium;
+    font-size: 14px;
+    transition-timing-function: ease-out;
+    transition: 0.25s;
+}
