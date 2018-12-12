@@ -21,7 +21,7 @@ const CopyButton = () => {
         <button
             className={styles.copyButton}
             onClick={handleCopy}>
-            <span className={styles.icon} /> Copy notes to clipboard
+            <span className={styles.icon} /> Copy notes
         </button>
     )
 }

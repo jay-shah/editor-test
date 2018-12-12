@@ -373,6 +373,7 @@ class App extends Component {
         <div className={styles.mainTitle}>
           Click below to begin editing your notes.
         </div >
+        <button className={styles.copyNotification}><span className={styles.icon} />Copied to clipboard</button>
         <CopyButton />
         <div className={styles.template} id='thisistheid' data-enable-grammarly="false.">
           {Sections}
