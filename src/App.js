@@ -109,21 +109,27 @@ class App extends Component {
     return options
   }
 
-  getNotesWithTemplateOptions = (note, templateOptions, notesWithTemplateOptions, title, noteIndex) => {
+  getNotesWithTemplateOptions = (note, templateOptions, notesWithTemplateOptions, title, noteIndex, tempNote) => {
 
     let option = templateOptions[0]
+    let prefix = this.getPrefix(note, option)
 
-    const prefix = this.getPrefix(note, option)
+
     const suffix = this.getSuffix(note, option)
     const infixList = this.getInfix(option, prefix, suffix)
+    notesWithTemplateOptions.push(prefix)
+
+    if (tempNote) {
+      prefix = this.getPrefix(tempNote, option)
+    }
+
     const rendersButtons = this.rendersButtons(infixList, prefix, suffix, title, noteIndex)
 
-    notesWithTemplateOptions.push(prefix)
     notesWithTemplateOptions = notesWithTemplateOptions.concat(rendersButtons)
 
     if (templateOptions.length !== 1) {
       const suffix = this.getSuffix(note, option)
-      return this.getNotesWithTemplateOptions(suffix, templateOptions.splice(1), notesWithTemplateOptions, title, noteIndex)
+      return this.getNotesWithTemplateOptions(suffix, templateOptions.splice(1), notesWithTemplateOptions, title, noteIndex, note)
     }
     notesWithTemplateOptions.push(suffix)
     return notesWithTemplateOptions
@@ -149,7 +155,6 @@ class App extends Component {
 
   buttonClick = (e, infix, prefix, suffix, title, noteIndex) => {
     const titleData = this.getTitleData(title)
-
     let text = `${prefix} ${infix} ${suffix}`
     const { updateTemplate } = this.props;
     updateTemplate(titleData['titleIndex'], noteIndex, title, text)
