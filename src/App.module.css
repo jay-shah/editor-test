@@ -321,11 +321,11 @@ body {
   margin-right: 80px;
   position: fixed;
   right: 0;
-  -webkit-animation: slidein 1s; /* Safari, Chrome and Opera > 12.1 */
-      -moz-animation: slidein 1s; /* Firefox < 16 */
-       -ms-animation: slidein 1s; /* Internet Explorer */
-        -o-animation: slidein 1s; /* Opera < 12.1 */
-           animation: slidein 1s;
+  -webkit-animation: slidein 2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: slidein 2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Firefox < 16 */
+       -ms-animation: slidein 2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Internet Explorer */
+        -o-animation: slidein 2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Opera < 12.1 */
+           animation: slidein 2s cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 
   @keyframes slidein {
