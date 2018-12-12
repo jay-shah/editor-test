@@ -136,19 +136,21 @@ body {
   margin-bottom: 60px;
   background-color: white;
   float: left;
-  -webkit-animation: fadein 0.8s; /* Safari, Chrome and Opera > 12.1 */
-      -moz-animation: fadein 0.8s; /* Firefox < 16 */
-       -ms-animation: fadein 0.8s; /* Internet Explorer */
-        -o-animation: fadein 0.8s; /* Opera < 12.1 */
-           animation: fadein 0.8s;
+  -webkit-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Firefox < 16 */
+       -ms-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Internet Explorer */
+        -o-animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Opera < 12.1 */
+           animation: fadein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 @keyframes fadein {
   0% {
     transform: translateY(100%);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   100% {
     transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 }
 
@@ -156,9 +158,11 @@ body {
 @-moz-keyframes fadein {
   0% {
     transform: translateY(100%);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   100% {
     transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 }
 
@@ -166,9 +170,11 @@ body {
 @-webkit-keyframes fadein {
   0% {
     transform: translateY(100%);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   100% {
     transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 }
 
@@ -176,9 +182,11 @@ body {
 @-ms-keyframes fadein {
   0% {
     transform: translateY(100%);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   100% {
     transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 }
 
@@ -186,9 +194,11 @@ body {
 @-o-keyframes fadein {
   0% {
     transform: translateY(100%);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   100% {
     transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 }
 
@@ -321,19 +331,21 @@ body {
   margin-right: 80px;
   position: fixed;
   right: 0;
-  -webkit-animation: slidein 2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Safari, Chrome and Opera > 12.1 */
-      -moz-animation: slidein 2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Firefox < 16 */
-       -ms-animation: slidein 2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Internet Explorer */
-        -o-animation: slidein 2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Opera < 12.1 */
-           animation: slidein 2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  -webkit-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Firefox < 16 */
+       -ms-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Internet Explorer */
+        -o-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1); /* Opera < 12.1 */
+           animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 
   @keyframes slidein {
   0% {
     transform: translateX(100%);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   100% {
     transform: translateX(0);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   }
 
@@ -341,9 +353,11 @@ body {
   @-moz-keyframes slidein {
   0% {
     transform: translateY(100%);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   100% {
     transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   }
 
@@ -351,9 +365,11 @@ body {
   @-webkit-keyframes slidein {
   0% {
     transform: translateY(100%);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   100% {
     transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   }
 
@@ -361,9 +377,11 @@ body {
   @-ms-keyframes slidein {
   0% {
     transform: translateY(100%);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   100% {
     transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   }
 
@@ -371,9 +389,11 @@ body {
   @-o-keyframes slidein {
   0% {
     transform: translateY(100%);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   100% {
     transform: translateY(0);
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
   }
 
