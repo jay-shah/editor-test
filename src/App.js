@@ -122,8 +122,7 @@ class App extends Component {
     notesWithTemplateOptions = notesWithTemplateOptions.concat(rendersButtons)
 
     if (templateOptions.length !== 1) {
-      const suffix = this.getSuffix(note, option)
-      return this.getNotesWithTemplateOptions(suffix, templateOptions.splice(1), notesWithTemplateOptions, title, noteIndex)
+      return this.getNotesWithTemplateOptions(note, templateOptions.splice(1), notesWithTemplateOptions, title, noteIndex)
     }
     notesWithTemplateOptions.push(suffix)
     return notesWithTemplateOptions
@@ -287,7 +286,7 @@ class App extends Component {
     const titleData = this.getTitleData(title)
     let key = `${title}-${noteIndex}`.replace(/ /g, '')
     let refIndex = this.refList.indexOf(key)
-    const { inputRef, addNote, removeNote } = this.props;
+    const { inputRef, removeNote } = this.props;
 
     if (e.key === 'Backspace') {
       if (e.target.textContent === '') {
@@ -298,8 +297,10 @@ class App extends Component {
     if (e.key === 'Enter') {
 
       e.preventDefault()
+
       // data[titleData['titleIndex']][title].splice(noteIndex + 1, 0, " ")
 
+      const { addNote } = this.props;
       addNote(titleData['titleIndex'], noteIndex, title)
 
       setTimeout(() => {
@@ -373,7 +374,7 @@ class App extends Component {
           Click below to begin editing your notes.
         </div >
         <CopyButton />
-        <div className={styles.template} id='thisistheid'>
+        <div className={styles.template} id='thisistheid' data-enable-grammarly="false.">
           {Sections}
         </div >
         <div className={styles.cardConatiner}>
