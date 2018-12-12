@@ -160,7 +160,7 @@ class App extends Component {
     if (infix.trim() === 'Other') {
       text = `${prefix} ${suffix}`
     }
-    
+
     const { updateTemplate } = this.props;
     updateTemplate(titleData['titleIndex'], noteIndex, title, text)
   }
@@ -384,7 +384,7 @@ class App extends Component {
         <div className={styles.mainTitle}>
           Click below to begin editing your notes.
         </div >
-        <button className={styles.copyNotification}><span className={styles.icon} />Copied to clipboard</button>
+        <button className={styles.copyNotification}><span className={styles.icon} />Copied. Click to start a new appointment <span className={styles.icon2} /></button>
         <CopyButton />
         <div className={styles.template} id='thisistheid' data-enable-grammarly="false.">
           {Sections}
