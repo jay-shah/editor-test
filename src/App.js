@@ -122,7 +122,8 @@ class App extends Component {
     notesWithTemplateOptions = notesWithTemplateOptions.concat(rendersButtons)
 
     if (templateOptions.length !== 1) {
-      return this.getNotesWithTemplateOptions(note, templateOptions.splice(1), notesWithTemplateOptions, title, noteIndex)
+      const suffix = this.getSuffix(note, option)
+      return this.getNotesWithTemplateOptions(suffix, templateOptions.splice(1), notesWithTemplateOptions, title, noteIndex)
     }
     notesWithTemplateOptions.push(suffix)
     return notesWithTemplateOptions
