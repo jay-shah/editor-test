@@ -10,6 +10,7 @@ import { bindActionCreators } from "redux";
 import { updateTemplate, removeSection, removeNote, addNote, addNoteFromTitle } from './actions/templateActions'
 import SignUpButton from './components/SignUpButton'
 import Modal from './components/Modal'
+import LearnMoreCard from './components/LearnMoreCard'
 
 class App extends Component {
 
@@ -397,12 +398,7 @@ class App extends Component {
         <div className={styles.template} id='thisistheid' data-enable-grammarly={false}>
           {Sections}
         </div >
-        <div className={styles.cardConatiner}>
-          <div className={styles.cardImage}></div>
-          <div className={styles.cardTitle}>An AI dental assistant.</div>
-          <div className={styles.cardParagraph}> Kiroku lets you spend significantly less time writing clinical notes.</div>
-          <div><button className={styles.cardButton}>Learn more</button></div>
-        </div>
+        <LearnMoreCard />
         <Modal />
       </div>
     );
