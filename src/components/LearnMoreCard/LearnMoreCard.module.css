@@ -1,0 +1,186 @@
+.cardConatiner {
+    background: #FFFFFF;
+    border: 1px solid var(--hammersmith);
+    border-radius: 4px;
+    padding-left: 48px;
+    padding-right: 48px;
+    width: 14%;
+    height: 437px;
+    float: right;
+    top: 172px;
+    margin-left: 40px;
+    margin-right: 80px;
+    position: fixed;
+    right: 0;
+    -webkit-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+    /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+    /* Firefox < 16 */
+    -ms-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+    /* Internet Explorer */
+    -o-animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+    /* Opera < 12.1 */
+    animation: slidein 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(100%);
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    100% {
+        transform: translateX(0);
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes slidein {
+    0% {
+        transform: translateY(100%);
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    100% {
+        transform: translateY(0);
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes slidein {
+    0% {
+        transform: translateY(100%);
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    100% {
+        transform: translateY(0);
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+}
+
+/* Internet Explorer */
+@-ms-keyframes slidein {
+    0% {
+        transform: translateY(100%);
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    100% {
+        transform: translateY(0);
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes slidein {
+    0% {
+        transform: translateY(100%);
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    100% {
+        transform: translateY(0);
+        transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .cardConatiner {
+        display: none;
+    }
+}
+
+.cardImage {
+    background-image: url('./card-image.svg');
+    height: 180px;
+    width: 207px;
+    background-repeat: no-repeat;
+    margin: auto;
+}
+
+.cardTitle {
+    font-family: gorditaregular;
+    font-size: 24px;
+    color: #414141;
+    letter-spacing: -0.25px;
+    text-align: center;
+    line-height: 30px;
+    padding-bottom: 24px;
+    padding-top: 24px;
+}
+
+.cardParagraph {
+    /* Kiroku lets you spen: */
+    opacity: 0.75;
+    font-family: gorditaregular;
+    font-size: 16px;
+    color: #414141;
+    letter-spacing: -0.25px;
+    text-align: center;
+    line-height: 20px;
+    padding-bottom: 24px;
+}
+
+.cardButton {
+    /* Rectangle 7: */
+    background: var(--clinic);
+    border-radius: 4px;
+    border-radius: 4px;
+    font-family: gorditamedium;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    height: 40px;
+    border: 0px;
+    border-radius: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 22px;
+    padding-right: 22px;
+    font-family: gorditamedium;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 56px;
+    margin-bottom: 56px;
+    transition-timing-function: ease-out;
+    transition: 0.25s;
+}
+
+.cardButton:hover {
+    /* Rectangle 7: */
+    background: var(--clinic);
+    box-shadow: 0 2px 9px 4px rgba(88, 144, 255, 0.30);
+    transition-timing-function: ease-in;
+    cursor: pointer;
+    transition: 0.25s;
+    border-radius: 4px;
+    border-radius: 4px;
+    border-radius: 4px;
+    font-family: gorditamedium;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    height: 40px;
+    border: 0px;
+    border-radius: 4px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 22px;
+    padding-right: 22px;
+    font-family: gorditamedium;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 56px;
+}
