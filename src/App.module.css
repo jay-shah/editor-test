@@ -65,7 +65,7 @@ body {
 }
 
 ::selection {
-  background: var(--barray); /* WebKit/Blink Browsers */
+  background: var(--iona); /* WebKit/Blink Browsers */
   color: var(--base-two);
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 .noteButton:hover {
-  background: var(--barray);
+  background: var(--iona);
   cursor: pointer;
   color: var(--base-two);
   transition-timing-function: ease-in;
@@ -660,4 +660,16 @@ body {
   height: 22px;
   margin-right: 8px !important;
   vertical-align: sub;
+  overflow: hidden;
+}
+
+.icon2 {
+  background-image: url('./icon/icon2.svg');
+  display: inline-block !important;
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 22px;
+  margin-left: 4px !important;
+  vertical-align: middle;
+  margin-top: 4px;
 }
