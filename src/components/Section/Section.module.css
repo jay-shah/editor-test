@@ -6,6 +6,8 @@
     transition: 0.15s;
 }
 
+/*
+
 .sectionIconHovered:first-child {
     text-align: left;
     border-bottom: none;
@@ -15,11 +17,14 @@
     border-bottom: none;
 }
 
+*/
+
 .section {
     text-align: left;
     border-bottom: 1px solid var(--hammersmith);
 }
 
+/*
 .section:first-child {
     text-align: left;
     border-bottom: none;
@@ -28,3 +33,4 @@
 .section:nth-child(2) {
     border-bottom: none;
 }
+*/

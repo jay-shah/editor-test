@@ -17,6 +17,7 @@ const Note = ({
             onKeyDown={(e) => onKeyDownNote(e, title, noteIndex)}
             className={styles.note}
             onBlur={(e) => onBlurNote(e, title, noteIndex)}
+            placeholder="Enter notes here..."
         >
             {note}
         </div >
