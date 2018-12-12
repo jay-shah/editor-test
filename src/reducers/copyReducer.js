@@ -1,5 +1,6 @@
 const initialState = {
-    contentEditable: true
+    contentEditable: true,
+    clicked: false
 }
 
 export const copyReducer = (state = initialState, action) => {
@@ -9,6 +10,12 @@ export const copyReducer = (state = initialState, action) => {
             return {
                 ...state,
                 contentEditable: false
+            }
+
+        case "UPDATE_COPY_BUTTON_CLICKED":
+            return {
+                ...state,
+                clicked: true
             }
 
         default:
