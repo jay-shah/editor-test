@@ -11,13 +11,16 @@ const CopyButton = () => {
         window.getSelection().addRange(range);
         document.execCommand("removeFormat");
         document.execCommand("copy");
+        // document.getElementById('copy').play()
     }
 
 
     return (
         <button
         className={styles.copyButton}
-        onClick={handleCopy}>
+        onClick={handleCopy}
+
+        >
             <span className={styles.icon} /> Copy notes to clipboard
         </button>
     )

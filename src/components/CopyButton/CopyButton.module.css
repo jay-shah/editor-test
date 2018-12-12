@@ -20,6 +20,8 @@
   letter-spacing: 0;
   bottom: 0px;
   border: 1px solid var(--galloway);
+  transition-timing-function: ease-in;
+  transition: 0.25s;
 }
 
 @media only screen and (max-width: 1030px) {
@@ -29,11 +31,19 @@
 }
 
 .copyButton:hover {
-
+ transition-timing-function: ease-out;
+ transition: 0.25s;
 }
 
 .copyButton:focus {
   outline: none;
+}
+
+.copyButton:active {
+  background: var(--galloway);
+  box-shadow: 0 10px 60px -10px var(--galloway);
+  -webkit-transform: perspective(250px) scale3d(1, 1, 1) translateY(8%) !important;
+          transform: perspective(250px) scale3d(1, 1, 1) translateY(8%) !important;
 }
 
 .fixed-nav {
