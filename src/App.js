@@ -34,7 +34,6 @@ class App extends Component {
     const renderTitle = this.renderTitle(title)
     const listNotes = this.renderNotes(notes, title)
     return (
-
       <Section key={title} title={title} renderTitle={renderTitle} listNotes={listNotes} />
     )
   }
@@ -358,6 +357,7 @@ class App extends Component {
   render() {
     this.refList = []
     const Sections = this.renderData()
+    const { copyButtonClicked } = this.props;
     return (
       <div>
         <div className={styles.modal}>
@@ -384,9 +384,11 @@ class App extends Component {
         <div className={styles.mainTitle}>
           Click below to begin editing your notes.
         </div >
-        <button className={styles.copyNotification}><span className={styles.icon} />Copied. Click to start a new appointment <span className={styles.icon2} /></button>
+        {copyButtonClicked ?
+          <button className={styles.copyNotification}><span className={styles.icon} />Copied. Click to start a new appointment <span className={styles.icon2} /></button> : ''
+        }
         <CopyButton />
-        <div className={styles.template} id='thisistheid' data-enable-grammarly="false.">
+        <div className={styles.template} id='thisistheid' data-enable-grammarly={false}>
           {Sections}
         </div >
         <div className={styles.cardConatiner}>
@@ -404,7 +406,8 @@ const mapStatToProps = (state) => {
   return {
     inputRef: state.refReducer.inputRef,
     // template: state.templateReducer.templateIds.map(id => state.templateReducer.template[id])
-    template: state.templateReducer.template
+    template: state.templateReducer.template,
+    copyButtonClicked: state.copyReducer.clicked
   }
 };
 
@@ -419,3 +422,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStatToProps, mapDispatchToProps)(App)
+
