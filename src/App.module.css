@@ -52,6 +52,13 @@ input[type="submit"],
 border-radius: 0;
 }
 
+input,
+textarea,
+[contenteditable] {
+  caret-color: var(--clinic);
+  line-height: 18px;
+}
+
 body {
   background-color: #F7F9FA !important;
 }
