@@ -253,6 +253,9 @@ class App extends Component {
     let key = `${title}`.replace(/ /g, '')
     let refIndex = this.refList.indexOf(key)
     const { inputRef } = this.props;
+
+
+
     if (e.key === 'Enter') {
 
       e.preventDefault()
@@ -281,11 +284,17 @@ class App extends Component {
 
   onKeyDownNote = (e, title, noteIndex) => {
 
-
     const titleData = this.getTitleData(title)
     let key = `${title}-${noteIndex}`.replace(/ /g, '')
     let refIndex = this.refList.indexOf(key)
-    const { inputRef, addNote } = this.props;
+    const { inputRef, addNote, removeNote } = this.props;
+
+    if (e.key === 'Backspace') {
+      if (e.target.textContent === '') {
+        removeNote(titleData['titleIndex'], noteIndex, title)
+      }
+    }
+
     if (e.key === 'Enter') {
 
       e.preventDefault()
@@ -339,22 +348,22 @@ class App extends Component {
     const Sections = this.renderData()
     return (
       <div>
-      <div className={styles.modal}>
-      <div className={styles.flightPreloader} id="flight-preloader">
-      <svg width="100px" height="100px" viewBox="0 0 200 200" version="1.1">
-        <title>loading-flight</title>
-        <desc>Created with Sketch.</desc>
-        <defs></defs>
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <path d="M32.4348912,-0.200891226 C14.6325447,-0.200891226 0.200891226,14.2596834 0.200891226,32.097706 L0.200891226,168.391737 C0.200891226,176.957857 3.59696377,185.173132 9.64201145,191.230294 C22.2301711,203.843681 42.6396113,203.843681 55.227771,191.230294 L191.249214,54.9362629 C197.294262,48.8791013 200.690334,40.6638266 200.690334,32.097706 C200.690334,14.2596834 186.258681,-0.200891226 168.456334,-0.200891226 L32.4348912,-0.200891226 Z M0.200891226,168.391737 C0.200891226,186.22976 14.6325447,200.690334 32.4348912,200.690334 L168.456334,200.690334 C177.005322,200.690334 185.204166,197.287456 191.249214,191.230294 C203.837374,178.616907 203.837374,158.166567 191.249214,145.55318 L55.227771,9.25914908 C49.1827238,3.20198707 40.9838797,-0.200891226 32.4348912,-0.200891226 C14.6325447,-0.200891226 0.200891226,14.2596834 0.200891226,32.097706 L0.200891226,168.391737" id="Rectangle-2" transform="translate(100.445613, 100.244722) rotate(90.000000) translate(-100.445613, -100.244722) "></path>
-        </g>
-    </svg>
-    </div>
-    <div className={styles.modalText}>
-    Sorry about this. <br></br>
-        The Kiroku editor only works on larger screens.
+        <div className={styles.modal}>
+          <div className={styles.flightPreloader} id="flight-preloader">
+            <svg width="100px" height="100px" viewBox="0 0 200 200" version="1.1">
+              <title>loading-flight</title>
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path d="M32.4348912,-0.200891226 C14.6325447,-0.200891226 0.200891226,14.2596834 0.200891226,32.097706 L0.200891226,168.391737 C0.200891226,176.957857 3.59696377,185.173132 9.64201145,191.230294 C22.2301711,203.843681 42.6396113,203.843681 55.227771,191.230294 L191.249214,54.9362629 C197.294262,48.8791013 200.690334,40.6638266 200.690334,32.097706 C200.690334,14.2596834 186.258681,-0.200891226 168.456334,-0.200891226 L32.4348912,-0.200891226 Z M0.200891226,168.391737 C0.200891226,186.22976 14.6325447,200.690334 32.4348912,200.690334 L168.456334,200.690334 C177.005322,200.690334 185.204166,197.287456 191.249214,191.230294 C203.837374,178.616907 203.837374,158.166567 191.249214,145.55318 L55.227771,9.25914908 C49.1827238,3.20198707 40.9838797,-0.200891226 32.4348912,-0.200891226 C14.6325447,-0.200891226 0.200891226,14.2596834 0.200891226,32.097706 L0.200891226,168.391737" id="Rectangle-2" transform="translate(100.445613, 100.244722) rotate(90.000000) translate(-100.445613, -100.244722) "></path>
+              </g>
+            </svg>
+          </div>
+          <div className={styles.modalText}>
+            Sorry about this. <br></br>
+            The Kiroku editor only works on larger screens.
         </div>
-      </div >
+        </div >
         <div className={styles.navBar}><div className={styles.kirokuLogo}></div>
           <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div>
           <div className={styles.navList}>Contact</div>
@@ -363,7 +372,7 @@ class App extends Component {
         <div className={styles.mainTitle}>
           Click below to begin editing your notes.
         </div >
-        <CopyButton/>
+        <CopyButton />
         <div className={styles.template} id='thisistheid'>
           {Sections}
         </div >
