@@ -19,16 +19,16 @@ const TitleComponent = ({
             className={styles.titleComponent}
             onMouseEnter={() => onMouseEnterTitle(titleKey)}
             onMouseLeave={onMouseLeaveTitle} >
-            <Title
-                titlekey={titleKey}
-                onKeyDownTitle={onKeyDownTitle}
-                title={title}
-            />
             <TrashTitleIcon
                 onMouseKey={onMouseKey}
                 titleKey={titleKey}
                 title={title}
                 trashClickTitle={trashClickTitle}
+            />
+            <Title
+                titlekey={titleKey}
+                onKeyDownTitle={onKeyDownTitle}
+                title={title}
             />
         </div >
     )
