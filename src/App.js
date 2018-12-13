@@ -376,10 +376,6 @@ class App extends Component {
     return (
       <div>
       <Modal />
-      {copyButtonClicked ?
-        <button className={styles.copyNotification}><span className={styles.icon} />Copied. Click to start a new appointment <span className={styles.icon2} /></button> : ''
-      }
-      <CopyButton />
         <div className={styles.modal}>
           <div className={styles.flightPreloader} id="flight-preloader">
             <svg width="100px" height="100px" viewBox="0 0 200 200" version="1.1">
@@ -410,7 +406,6 @@ class App extends Component {
           {Sections}
         </div >
         <LearnMoreCard />
-        <Modal />
       </div>
     );
   }
