@@ -1,6 +1,7 @@
 import template from '../data/template.json'
 import { updateAt, ops } from 'fn-update'
 
+const immutableSplice = (arr, start, deleteCount, ...items) => [...arr.slice(0, start), ...items, ...arr.slice(start + deleteCount)]
 
 const initialState = {
     template: template,
@@ -60,39 +61,21 @@ export const templateReducer = (state = initialState, action) => {
 
         case "ADD_NOTE":
 
-            return {
-                ...state,
-                template: [
-                    ...state.template.slice(0, action.titleIndex),
-                    {
-                        ...state.template[action.titleIndex],
-                        [action.title]: [
-                            ...state.template[action.titleIndex][action.title].slice(0, action.noteIndex + 1),
-                            ' ',
-                            ...state.template[action.titleIndex][action.title].slice(action.noteIndex + 1)
-                        ]
+            return updateAt(
+                ['template', action.titleIndex, action.title],
+                (arr) => immutableSplice(arr, action.noteIndex + 1, 0, ' ')
+            )(state)
 
-                    },
-                    ...state.template.slice(action.titleIndex + 1)
-                ]
-            }
+
+
 
         case 'ADD_NOTE_FROM_TITLE':
-            return {
-                ...state,
-                template: [
-                    ...state.template.slice(0, action.titleIndex),
-                    {
-                        ...state.template[action.titleIndex],
-                        [action.title]: [
-                            ...state.template[action.titleIndex][action.title].slice(0, 0),
-                            ' ',
-                            ...state.template[action.titleIndex][action.title].slice(0)
-                        ]
-                    },
-                    ...state.template.slice(action.titleIndex + 1)
-                ]
-            }
+
+            return updateAt(
+                ['template', action.titleIndex, action.title],
+                (arr) => immutableSplice(arr, 0, 0, ' ')
+            )(state)
+
 
         default:
             return state
