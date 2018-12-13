@@ -20,8 +20,7 @@ const NoteComponent = ({
             key={noteKey}
             className={styles.noteComponent}
             onMouseEnter={() => onMouseEnterNote(noteKey)}
-            onMouseLeave={onMouseLeaveNote}
-        >
+            onMouseLeave={onMouseLeaveNote}>
             <TrashNoteIcon
                 onMouseKey={onMouseKey}
                 noteKey={noteKey}
@@ -29,7 +28,6 @@ const NoteComponent = ({
                 trashClickNote={trashClickNote}
                 noteIndex={noteIndex}
             />
-
             <Note
                 onMouseKey={onMouseKey}
                 note={note}

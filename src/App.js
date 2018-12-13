@@ -163,9 +163,16 @@ class App extends Component {
       text = `${prefix} ${suffix}`
     }
 
-    const { updateTemplate } = this.props;
-    updateTemplate(titleData['titleIndex'], noteIndex, title, text)
+    const { updateTemplate, inputRef } = this.props;
 
+    let refKEy = `${title}-${noteIndex}`.replace(/ /g, '')
+
+    updateTemplate(titleData['titleIndex'], noteIndex, title, text)
+    let refIndex = this.refList.indexOf(refKEy)
+
+    setTimeout(() => {
+      inputRef[this.refList[refIndex]].focus()
+    }, 0)
 
 
   }
