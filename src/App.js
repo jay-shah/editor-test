@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.module.css';
 import CopyButton from './components/CopyButton'
-import Modal from './components/Modal'
+import SignUpModal from './components/SignUpModal'
 import LearnMoreCard from './components/LearnMoreCard'
 import CopyNotification from "./components/CopyNotification";
 import NavBar from './components/NavBar'
@@ -14,7 +14,7 @@ class App extends Component {
 
     return (
       <div>
-        <Modal />
+        <SignUpModal />
         <PhoneView />
         <NavBar />
         <MainTitle />
