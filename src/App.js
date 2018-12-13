@@ -11,6 +11,7 @@ import { updateTemplate, removeSection, removeNote, addNote, addNoteFromTitle } 
 import SignUpButton from './components/SignUpButton'
 import Modal from './components/Modal'
 import LearnMoreCard from './components/LearnMoreCard'
+import CopyNotification from "./components/CopyNotification";
 
 class App extends Component {
 
@@ -399,9 +400,7 @@ class App extends Component {
         <div className={styles.mainTitle}>
           Click below to begin editing your notes.
         </div >
-        {copyButtonClicked ?
-          <button className={styles.copyNotification}><span className={styles.icon} />Copied. Click to start a new appointment <span className={styles.icon2} /></button> : ''
-        }
+        <CopyNotification />
         <CopyButton />
         <div className={styles.template} id='thisistheid' data-enable-grammarly={false}>
           {Sections}
