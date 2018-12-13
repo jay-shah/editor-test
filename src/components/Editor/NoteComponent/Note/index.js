@@ -1,7 +1,7 @@
 import Note from './Note'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { addRef } from '../../../actions/noteAction'
+import { addRef } from '../../../../actions/noteAction'
 
 const mapStatToProps = (state) => {
     return {}

@@ -1,7 +1,7 @@
 import TrashTitleIcon from './TrashTitleIcon'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { mouseEnterTrashTitleIcon, mouseLeaveTrashTitleIcon } from '../../../actions/titleAction'
+import { mouseEnterTrashTitleIcon, mouseLeaveTrashTitleIcon } from '../../../../actions/titleAction'
 
 const mapStatToProps = (state) => {
     return {}
