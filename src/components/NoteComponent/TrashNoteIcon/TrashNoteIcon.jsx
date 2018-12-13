@@ -8,14 +8,19 @@ const TrashNoteIcon = ({
     trashClickNote,
     noteIndex
 }) => {
-    return (
-        <div
-            name='trash'
-            className={styles.trashNote}
-            style={onMouseKey === noteKey ? { visibility: 'visible' } : { visibility: 'hidden' }}
-            onClick={() => trashClickNote(title, noteIndex)}
-        />
-    )
+
+    if (onMouseKey === noteKey) {
+
+        return (
+
+            <div
+                className={styles.trashNote}
+                // style={onMouseKey === noteKey ? { visibility: 'visible' } : { visibility: 'hidden' }}
+                onClick={() => trashClickNote(title, noteIndex)}
+            ></div>
+        )
+    }
+    return null
 }
 
 export default TrashNoteIcon

@@ -31,6 +31,7 @@ const NoteComponent = ({
             />
 
             <Note
+                onMouseKey={onMouseKey}
                 note={note}
                 noteKey={noteKey}
                 title={title}
