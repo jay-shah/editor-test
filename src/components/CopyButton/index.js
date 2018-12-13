@@ -4,12 +4,15 @@ import { bindActionCreators } from "redux";
 import { updateCopyButtonClicked } from '../../actions/copyActions'
 
 const mapStatToProps = (state) => {
-    return {}
+    return {
+        template: state.templateReducer.template,
+    }
+
 };
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({
-        updateCopyButtonClicked
+        updateCopyButtonClicked,
     }, dispatch);
 };
 
