@@ -142,6 +142,7 @@ class App extends Component {
       const key = `${infix}-${index}`
       return (
         <button
+          contentEditable={false}
           className={styles.noteButton}
           key={key}
           prefix={prefix}
