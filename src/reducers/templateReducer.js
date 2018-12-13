@@ -1,6 +1,5 @@
 import template from '../data/template.json'
-import { updateTemplate } from '../actions/templateActions.js'
-import { updates, updateAt, ops } from 'fn-update'
+import { updateAt, ops } from 'fn-update'
 
 
 const initialState = {
