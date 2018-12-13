@@ -113,7 +113,7 @@ text-align: center;
 }
 
 .emailillustration {
-  background-image: url(/static/media/emailillustration.7c0333d5.svg);
+  background-image: url(./images/emailillustration.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -130,7 +130,7 @@ text-align: center;
   float: right;
   padding: 8px;
   height: 14px;
-  background-image: url(/static/media/cross.a1a13e20.svg);
+  background-image: url(./icon/cross.svg);
   background-repeat: no-repeat;
   cursor: pointer;
   opacity: 0.5;
