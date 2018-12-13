@@ -1,7 +1,7 @@
 import Modal from './Modal'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { updateCopyButtonClicked } from '../../actions/copyActions'
+import { hideModal } from '../../actions/signUpAction'
 
 const mapStatToProps = (state) => {
     return {
@@ -10,7 +10,7 @@ const mapStatToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({}, dispatch);
+    return bindActionCreators({ hideModal }, dispatch);
 };
 
 export default connect(mapStatToProps, mapDispatchToProps)(Modal)

@@ -11,6 +11,12 @@ export const modalReducer = (state = initialState, action) => {
                 show: true
             }
 
+        case "HIDE_MODAL":
+            return {
+                ...state,
+                show: false
+            }
+
 
         default:
             return state
