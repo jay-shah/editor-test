@@ -28,34 +28,24 @@
 
 @font-face {
   font-family: 'gorditaregular';
-  src: url('./fonts/gordita-regular-webfont.woff2') format('woff2'),
-    url('./fonts/gordita-regular-webfont.woff') format('woff');
+  src: url('./fonts/gordita-regular-webfont.woff2') format('woff2'), url('./fonts/gordita-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'gorditamedium';
-  src: url('./fonts/gordita-medium-webfont.woff2') format('woff2'),
-    url('./fonts/gordita-medium-webfont.woff') format('woff');
+  src: url('./fonts/gordita-medium-webfont.woff2') format('woff2'), url('./fonts/gordita-medium-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
 
-textarea,
-input.text,
-input[type="text"],
-input[type="button"],
-input[type="submit"],
-.input-checkbox {
+textarea, input.text, input[type="text"], input[type="button"], input[type="submit"], .input-checkbox {
   -webkit-appearance: none;
   border-radius: 0;
 }
 
-input,
-textarea,
-[contenteditable] {
+input, textarea, [contenteditable] {
   caret-color: var(--clinic);
   line-height: 18px;
 }
@@ -113,7 +103,6 @@ body {
   0% {
     transform: translateY(100%);
   }
-
   100% {
     transform: translateY(0);
   }
@@ -130,7 +119,11 @@ body {
   color: #484848;
   letter-spacing: -0.25px;
   line-height: 30px;
-
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .template {
@@ -161,7 +154,6 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
-
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -169,12 +161,12 @@ body {
 }
 
 /* Firefox < 16 */
+
 @-moz-keyframes fadein {
   0% {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
-
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -182,12 +174,12 @@ body {
 }
 
 /* Safari, Chrome and Opera > 12.1 */
+
 @-webkit-keyframes fadein {
   0% {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
-
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -195,12 +187,12 @@ body {
 }
 
 /* Internet Explorer */
+
 @-ms-keyframes fadein {
   0% {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
-
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -208,12 +200,12 @@ body {
 }
 
 /* Opera < 12.1 */
+
 @-o-keyframes fadein {
   0% {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
-
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -348,7 +340,6 @@ body {
   100% {
     stroke-dashoffset: 0;
   }
-
   0% {
     stroke-dashoffset: 1340;
   }

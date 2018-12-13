@@ -1,0 +1,137 @@
+.modal {
+  background-color: white;
+  z-index: 10000;
+  border-radius: 2px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--enamel);
+  margin: auto;
+width: 50%;
+padding: 10px;
+margin-top: 4%;
+padding-top: 0;
+padding-bottom: 3%;
+position: absolute;
+margin-left: 25%;
+margin-right: 25%;
+}
+
+.modalbg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  z-index: 99;
+}
+
+.modaltitleone {
+  font-family: gorditaregular;
+  color: var(--base-two);
+  font-size: 22px;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+.modaltitletwo {
+  font-family: gorditaregular;
+  color: var(--moorgate);
+  font-size: 14px;
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+.modalform {
+  -webkit-border-radius: 4px;
+    border-radius: 4px !important;
+    height: 28px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 13px 15px;
+    z-index: 1;
+    padding-left: 20px;
+    background-color: white !important;
+    background-color: transparent;
+    border: 1px solid var(--enamel);
+    font-family: gorditaregular;
+    font-size: 14px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+    outline: none;
+}
+
+.modalform:focus {
+  border: 1px solid var(--galloway);
+}
+
+
+.submitButton {
+    -webkit-user-select: none;
+    -webkit-transition: background .2s .1s;
+    transition: background .2s .1s;
+    border: 0;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 4em;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    z-index: 0;
+    background-color: var(--galloway);
+    color: var(--base-one);
+    float: right;
+    margin-right: 8%;
+    margin-top: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-family: gorditamedium;
+    font-size: 16px;
+    border-radius: 2px !important;
+    transition-timing-function: ease-out;
+    transition: 0.25s;
+}
+
+.submitButton:hover {
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0,122,135,0.25), 0 1px 3px 1px rgba(0,122,135,0.3);
+    box-shadow: 0 1px 1px 0 rgba(0,122,135,0.25), 0 1px 3px 1px rgba(0,122,135,0.3);
+    transition-timing-function: ease-out;
+    transition: 0.25s;
+}
+
+form {
+border: 1px solid white;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+text-align: center;
+}
+
+.emailillustration {
+  background-image: url(/static/media/emailillustration.7c0333d5.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 200px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.close {
+  margin-top: 16px;
+  float: right;
+  padding: 8px;
+  height: 14px;
+  background-image: url(/static/media/cross.a1a13e20.svg);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: 0.5;
+}
