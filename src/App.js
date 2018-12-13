@@ -8,10 +8,10 @@ import Section from './components/Section'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { updateTemplate, removeSection, removeNote, addNote, addNoteFromTitle } from './actions/templateActions'
-import SignUpButton from './components/SignUpButton'
 import Modal from './components/Modal'
 import LearnMoreCard from './components/LearnMoreCard'
 import CopyNotification from "./components/CopyNotification";
+import NavBar from './components/NavBar'
 
 class App extends Component {
 
@@ -372,7 +372,6 @@ class App extends Component {
   render() {
     this.refList = []
     const Sections = this.renderData()
-    const { copyButtonClicked } = this.props;
     return (
       <div>
         <Modal />
@@ -389,14 +388,9 @@ class App extends Component {
           <div className={styles.modalText}>
             Sorry about this. <br></br>
             The Kiroku editor only works on larger screens.
-        </div>
+          </div>
         </div >
-        <div className={styles.navBar}>
-          <a href="#"><div className={styles.kirokuLogo}></div></a>
-          <SignUpButton />
-          <a href="mailto:hannah@trykiroku.com?subject=Equiry about Kiroku" target="_blank"><div className={styles.navList}>Contact</div></a>
-          <a href="https://www.trykiroku.com" target="_blank"><div className={styles.navList}>About</div></a>
-        </div>
+        <NavBar />
         <div className={styles.mainTitle}>
           Click below to begin editing your notes.
         </div >

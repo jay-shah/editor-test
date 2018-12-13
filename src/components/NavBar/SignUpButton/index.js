@@ -1,7 +1,7 @@
 import SignUpButton from './SignUpButton'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { showModal } from '../../actions/signUpAction'
+import { showModal } from '../../../actions/signUpAction'
 
 const mapStatToProps = (state) => {
     return {

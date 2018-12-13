@@ -40,12 +40,19 @@
   font-style: normal;
 }
 
-textarea, input.text, input[type="text"], input[type="button"], input[type="submit"], .input-checkbox {
+textarea,
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
   -webkit-appearance: none;
   border-radius: 0;
 }
 
-input, textarea, [contenteditable] {
+input,
+textarea,
+[contenteditable] {
   caret-color: var(--clinic);
   line-height: 18px;
 }
@@ -108,6 +115,7 @@ body {
   0% {
     transform: translateY(100%);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -159,6 +167,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -172,6 +181,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -185,6 +195,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -198,6 +209,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -211,6 +223,7 @@ body {
     transform: translateY(100%);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
+
   100% {
     transform: translateY(0);
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -269,37 +282,6 @@ body {
   /* border: 1px solid black; */
 }
 
-.navBar {
-  background: #FFFFFF;
-  height: 40px;
-  padding-left: 24px;
-  padding-right: 48px;
-  padding-top: 24px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid var(--hammersmith)
-}
-
-.kirokuLogo {
-  background-image: url('./images/logo.svg');
-  height: 34px;
-  width: 105px;
-  display: inline-block;
-}
-
-.navList {
-  display: inline-block;
-  float: right;
-  padding-right: 24px;
-  line-height: 35px;
-  font-family: gorditamedium;
-  font-size: 14px;
-  color: #484848;
-  letter-spacing: -0.08px;
-  text-align: center;
-}
-
-
-
 
 
 .modal {
@@ -345,6 +327,7 @@ body {
   100% {
     stroke-dashoffset: 0;
   }
+
   0% {
     stroke-dashoffset: 1340;
   }
