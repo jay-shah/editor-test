@@ -19,7 +19,9 @@ const CopyButton = ({ updateCopyButtonClicked, template }) => {
             templateNote = `${templateNote}\n\n${title}:\n`
             titles[title].map((note) => {
                 templateNote = `${templateNote}${note}\n`
+                return true
             })
+            return true
         })
         return templateNote
     }
