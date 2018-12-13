@@ -1,0 +1,54 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    padding-top: 45vh;
+    text-align: center;
+    background-color: var(--galloway);
+    z-index: 90;
+    position: fixed;
+}
+
+.modalText {
+    font-family: gorditamedium;
+    padding-top: 40vh;
+    color: var(--hammersmith);
+}
+
+.flightPreloader svg {
+    /* width: 100%; */
+    /* max-height: 100%; */
+    position: absolute;
+    top: -45vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 100;
+    overflow: visible;
+}
+
+.flightPreloader svg path {
+    fill-opacity: 1;
+    stroke: #fff;
+    stroke-width: 20;
+    stroke-dasharray: 670;
+    stroke-dashoffset: 670;
+    stroke-linecap: round;
+    animation: draw 2.5s infinite linear;
+}
+
+@keyframes draw {
+    100% {
+        stroke-dashoffset: 0;
+    }
+
+    0% {
+        stroke-dashoffset: 1340;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .modal {
+        display: none;
+    }
+}

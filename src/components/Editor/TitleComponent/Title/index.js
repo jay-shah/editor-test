@@ -1,7 +1,7 @@
 import Title from './Title'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { addRef } from '../../../actions/titleAction'
+import { addRef } from '../../../../actions/titleAction'
 
 const mapStatToProps = (state) => {
     return {
