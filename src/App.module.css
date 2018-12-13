@@ -569,6 +569,10 @@ body {
   animation: fadeout alternate 1.8s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
+.copyNotification:focus {
+  outline: none;
+}
+
 @media only screen and (max-width: 1030px) {
   .copyNotification {
     width: 80%;
