@@ -375,7 +375,7 @@ class App extends Component {
     const { copyButtonClicked } = this.props;
     return (
       <div>
-      <Modal />
+        <Modal />
         <div className={styles.modal}>
           <div className={styles.flightPreloader} id="flight-preloader">
             <svg width="100px" height="100px" viewBox="0 0 200 200" version="1.1">
@@ -391,11 +391,11 @@ class App extends Component {
             The Kiroku editor only works on larger screens.
         </div>
         </div >
-        <div className={styles.navBar}><div className={styles.kirokuLogo}></div>
-          {/* <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div> */}
+        <div className={styles.navBar}>
+          <a href="#"><div className={styles.kirokuLogo}></div></a>
           <SignUpButton />
-          <a href="mailto:hannah@trykiroku.com"><div className={styles.navList}>Contact</div></a>
-          <a href="https://www.trykiroku.com"><div className={styles.navList}>About</div></a>
+          <a href="mailto:hannah@trykiroku.com?subject=Equiry about Kiroku" target="_blank"><div className={styles.navList}>Contact</div></a>
+          <a href="https://www.trykiroku.com" target="_blank"><div className={styles.navList}>About</div></a>
         </div>
         <div className={styles.mainTitle}>
           Click below to begin editing your notes.
