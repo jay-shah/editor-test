@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
 import styles from './App.module.css';
-import templateData from './data/template.json'
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { updateTemplate, removeSection, removeNote, addNote, addNoteFromTitle } from './actions/templateActions'
 import TitleComponent from './components/TitleComponent/TitleComponent'
 import NoteComponent from './components/NoteComponent'
 import CopyButton from './components/CopyButton'
 import Section from './components/Section'
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { updateTemplate, removeSection, removeNote, addNote, addNoteFromTitle } from './actions/templateActions'
 import Modal from './components/Modal'
 import LearnMoreCard from './components/LearnMoreCard'
 import CopyNotification from "./components/CopyNotification";
 import NavBar from './components/NavBar'
 import PhoneView from './components/PhoneView'
-
+import MainTitle from './components/MainTitle'
 class App extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      data: templateData
+      key: null
     }
   }
 
@@ -378,9 +377,7 @@ class App extends Component {
         <Modal />
         <PhoneView />
         <NavBar />
-        <div className={styles.mainTitle}>
-          Click below to begin editing your notes.
-        </div >
+        <MainTitle />
         <CopyNotification />
         <CopyButton />
         <div className={styles.template} id='thisistheid'>
