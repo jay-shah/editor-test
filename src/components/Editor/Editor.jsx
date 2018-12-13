@@ -267,6 +267,11 @@ export default class Editor extends Component {
         let refIndex = this.refList.indexOf(key)
         const { inputRef } = this.props;
 
+        if (e.key === 'Backspace') {
+            if (e.target.textContent === '') {
+                e.preventDefault()
+            }
+        }
 
 
         if (e.key === 'Enter') {
