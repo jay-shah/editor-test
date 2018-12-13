@@ -305,6 +305,9 @@ export default class Editor extends Component {
         if (e.key === 'Backspace') {
             if (e.target.textContent === '') {
                 removeNote(titleData['titleIndex'], noteIndex, title)
+                setTimeout(() => {
+                    inputRef[this.refList[refIndex - 1]].focus()
+                }, 0)
             }
         }
 
