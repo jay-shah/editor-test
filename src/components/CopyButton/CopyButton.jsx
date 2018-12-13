@@ -13,7 +13,6 @@ const CopyButton = ({ updateCopyButtonClicked }) => {
         range.selectNode(document.getElementById('thisistheid'));
         window.getSelection().addRange(range);
         document.execCommand("copy");
-
         const audio = new Audio(audioUrl)
         audio.play()
 

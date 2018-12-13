@@ -1,15 +1,27 @@
 .note {
-    /* display: inline; */
-    position: relative;
-    left: 8px;
-    display: inline-block;
-    width: 100%;
+  /* display: inline; */
+  position: relative;
+  /* left: 8px; */
+  left: 38px;
+  display: inline-block;
+  width: 100%;
 }
 
-[contenteditable=true]:empty:before{
+
+.noteHover {
+  /* display: inline; */
+  position: relative;
+  left: 8px;
+  /* left: 30px; */
+  display: inline-block;
+  width: 100%;
+}
+
+[contenteditable=true]:empty:before {
   content: attr(placeholder);
-  display: block; /* For Firefox */
-  color: rgba(19,19,19,0.35);
+  display: block;
+  /* For Firefox */
+  color: rgba(19, 19, 19, 0.35);
   letter-spacing: -0.11px;
   line-height: 18px;
   cursor: text;

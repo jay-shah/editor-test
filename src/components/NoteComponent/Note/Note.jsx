@@ -8,14 +8,15 @@ const Note = ({
     noteIndex,
     onBlurNote,
     onKeyDownNote,
-    addRef
+    addRef,
+    onMouseKey
 }) => {
     return (
         <div contentEditable={true}
             suppressContentEditableWarning
             ref={(e) => addRef(e, noteKey)}
             onKeyDown={(e) => onKeyDownNote(e, title, noteIndex)}
-            className={styles.note}
+            className={onMouseKey === noteKey ? styles.noteHover : styles.note}
             onBlur={(e) => onBlurNote(e, title, noteIndex)}
             placeholder="Enter notes here..."
         >
