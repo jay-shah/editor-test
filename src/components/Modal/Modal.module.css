@@ -1,0 +1,22 @@
+.modal {
+  background-color: white;
+  z-index: 10000;
+  border-radius: 10px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  margin: auto;
+width: 40%;
+height: 40%;
+padding: 10px;
+margin-top: 80px;
+position: absolute;
+margin-left: 30%;
+margin-right: 30%;
+}
+
+.modalbg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  z-index: 99;
+}
