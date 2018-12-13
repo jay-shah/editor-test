@@ -394,8 +394,8 @@ class App extends Component {
         <div className={styles.navBar}><div className={styles.kirokuLogo}></div>
           {/* <div className={styles.signUp}><button className={styles.signupButton}>Sign up</button></div> */}
           <SignUpButton />
-          <div className={styles.navList}>Contact</div>
-          <div className={styles.navList}>About</div>
+          <a href="mailto:hannah@trykiroku.com"><div className={styles.navList}>Contact</div></a>
+          <a href="https://www.trykiroku.com"><div className={styles.navList}>About</div></a>
         </div>
         <div className={styles.mainTitle}>
           Click below to begin editing your notes.
