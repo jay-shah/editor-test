@@ -13,7 +13,7 @@ class App extends Component {
   render() {
 
     return (
-      <div>
+      <div spellCheck="false">
         <SignUpModal />
         <PhoneView />
         <NavBar />
