@@ -1,17 +1,49 @@
 .modal {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    padding-top: 45vh;
+    padding-top: 10%;
     text-align: center;
-    background-color: var(--galloway);
+    background-color: #fafafa;
     z-index: 90;
     position: fixed;
+    overflow: hidden;
+    overflow-y: hidden;
+}
+
+.modaltextBold {
+    font-family: gorditamedium;
+    padding-top: 4%;
+    color: var(--base-two);
+    z-index: 120;
+    font-size: 19px;
 }
 
 .modalText {
-    font-family: gorditamedium;
-    padding-top: 40vh;
-    color: var(--hammersmith);
+    font-family: gorditaregular;
+    color: var(--moorgate);
+    z-index: 120;
+}
+
+.copyrightLogo {
+    opacity: 0.5;
+    height: 40px;
+    width: 120px;
+    background-image: url('./images/littlelogo2.svg');
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 100;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.copyright {
+    font-family: gorditaregular;
+    color: var(--moorgate);
+    opacity: 0.5;
+    z-index: 120;
+    font-size: 12px;
+    padding-top: 12px;
 }
 
 .flightPreloader svg {
@@ -51,4 +83,37 @@
     .modal {
         display: none;
     }
+}
+
+.noPhone {
+  width: 80%;
+      background-image: url(./images/kirokuproduct1.gif);
+      height: 400px;
+      top: 20%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 100;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border: 1px solid var(--enamel);
+      border-radius: 3px;
+      margin: 10%;
+}
+
+a {
+  color: var(--galloway);
+  text-decoration: none;
+}
+
+.illustration {
+      width: 180px;
+      background-image: url(./images/nophone.svg);
+      height: 180px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 100;
+      background-size: contain;
+      background-repeat: no-repeat;
 }
