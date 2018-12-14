@@ -28,6 +28,7 @@ margin-right: 25%;
   background-color: rgba(0, 0, 0, 0.75);
   position: fixed;
   z-index: 99;
+  overflow-y: scroll;
 }
 
 .modaltitleone {
@@ -76,8 +77,8 @@ margin-right: 25%;
     -webkit-transition: background .2s .1s;
     transition: background .2s .1s;
     border: 0;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+    -webkit-border-radius: 4px !important;
+    border-radius: 4px !important;
     cursor: pointer;
     display: inline-block;
     font-size: 14px;
@@ -100,7 +101,6 @@ margin-right: 25%;
     padding-bottom: 14px;
     font-family: gorditamedium;
     font-size: 16px;
-    border-radius: 2px !important;
     transition-timing-function: ease-out;
     transition: 0.25s;
 }
@@ -134,4 +134,8 @@ margin-right: 25%;
   background-repeat: no-repeat;
   cursor: pointer;
   opacity: 0.5;
+}
+
+.close:hover {
+  opacity: 1;
 }
