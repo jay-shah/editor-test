@@ -11,19 +11,25 @@ import Editor from './components/Editor'
 class App extends Component {
 
   render() {
-
-    return (
-      <div spellCheck="false">
-        <SignUpModal />
+    if (window.innerWidth < 800) {
+      return (
         <PhoneView />
-        <NavBar />
-        <MainTitle />
-        <CopyNotification />
-        <CopyButton />
-        <Editor />
-        <LearnMoreCard />
-      </div>
-    );
+      )
+    }
+
+    else {
+      return (
+        <div spellCheck="false">
+          <SignUpModal />
+          <NavBar />
+          <MainTitle />
+          <CopyNotification />
+          <CopyButton />
+          <Editor />
+          <LearnMoreCard />
+        </div>
+      );
+    }
   }
 }
 
