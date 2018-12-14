@@ -12,7 +12,7 @@ const PhoneView = () => {
             Kiroku isn't available on mobile (yet). <br></br>
             </div>
             <div className={styles.modalText}>
-            Please view <a href="https://editor.kiroku.com">the editor</a> on a larger screen.
+            Please view <a href="https://editor.trykiroku.com">the editor</a> on a larger screen.
             </div>
             <div className={styles.noPhone}>
             </div>
