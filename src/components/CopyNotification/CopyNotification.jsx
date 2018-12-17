@@ -4,6 +4,7 @@ import styles from './CopyNotification.module.css'
 const CopyNotification = ({ copyButtonClicked }) => {
 
     const handleOnClick = () => {
+        window.scrollTo(0,0);
         window.location.reload();
     }
 
