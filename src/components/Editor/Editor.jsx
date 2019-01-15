@@ -5,8 +5,6 @@ import Section from './Section'
 import styles from './Editor.module.css'
 
 export default class Editor extends Component {
-
-
     constructor(props) {
         super(props)
         this.state = {
@@ -15,7 +13,6 @@ export default class Editor extends Component {
     }
 
     renderData = () => {
-
         const { template } = this.props;
         const sectionData = template.map((section) => {
             return this.renderSection(section)
@@ -76,13 +73,11 @@ export default class Editor extends Component {
     }
 
     getNote = (note, title, noteIndex) => {
-
         let templateOptions = this.findAllOptions(note)
 
         if (!templateOptions) {
             return (note)
         }
-
         else {
 
             let notesWithTemplateOptions = []
@@ -106,7 +101,6 @@ export default class Editor extends Component {
 
         let option = templateOptions[0]
         let prefix = this.getPrefix(note, option)
-
 
         const suffix = this.getSuffix(note, option)
         const infixList = this.getInfix(option, prefix, suffix)
@@ -218,7 +212,6 @@ export default class Editor extends Component {
 
 
     getNoteData = (title, note) => {
-
         let titleIndex = null
         let sectionData = null
         let noteIndex = null
@@ -301,7 +294,6 @@ export default class Editor extends Component {
     }
 
     onKeyDownNote = (e, title, noteIndex) => {
-
         const titleData = this.getTitleData(title)
         let key = `${title}-${noteIndex}`.replace(/ /g, '')
         let refIndex = this.refList.indexOf(key)
@@ -317,7 +309,6 @@ export default class Editor extends Component {
         }
 
         if (e.key === 'Enter') {
-
             e.preventDefault()
 
             // data[titleData['titleIndex']][title].splice(noteIndex + 1, 0, " ")

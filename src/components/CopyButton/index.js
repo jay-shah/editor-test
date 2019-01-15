@@ -6,6 +6,8 @@ import { updateCopyButtonClicked } from '../../actions/copyActions'
 const mapStatToProps = (state) => {
     return {
         template: state.templateReducer.template,
+        uuid: state.updateUUIDReducer.uuid,
+        ipAddr: state.updateIPAddrReducer.ipAddr
     }
 
 };

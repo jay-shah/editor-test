@@ -3,13 +3,29 @@ import styles from './CopyButton.module.css'
 import audioUrl from './audio/copy.mp3'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-const CopyButton = ({ updateCopyButtonClicked, template }) => {
-
+const CopyButton = ({ updateCopyButtonClicked, template, uuid, ipAddr }) => {
+    const sendNotes = () => {
+        const url = `${process.env.REACT_APP_URL}store-user-notes/${uuid}`
+        const data = {
+            ip: ipAddr,
+            notes: template
+        }
+        console.log(data)
+        fetch(url, {
+            method: "POST",
+            mode: 'cors',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+    }
 
     const handleCopy = () => {
         updateCopyButtonClicked()
         const audio = new Audio(audioUrl)
         audio.play()
+        sendNotes()
     }
 
     const parseNotes = () => {
